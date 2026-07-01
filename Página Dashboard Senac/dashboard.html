@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Senac</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!--Esse cabeçalho eu vou colocar em column-->
+    <header>
+         <div class="container-logo">
+        <div class="logo"><a href="#"><img src="img/Senac.png" alt="Senac"></a></div>
+    </div>
+    <div class="menu">
+        <ul>
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Buscar Professores</a></li>
+            <li><a href="#">Buscar Turmas</a></li>
+            <li><a href="#">Agenda Geral</a></li>
+            <li><a href="#">Alocações</a></li>
+        </ul>
+        <!--Essa parte vou usar pra criar um perfil para o usuário-->
+        <a href="#" class="foto-de-perfil"><img src="img/icon-perfil" alt="icone de perfil"></a>
+        <a href="#" id="perfil"></a>
+    </div>
+    </header>
+    <main>
+        <!--Essa é a primeira parte que aparece no dashboard lá em cima-->
+        <div class="1container">
+            <img src="img/icon.png" alt="icone Professores Disponiveis">
+            <h2>Professores Disponíveis</h2>
+        </div>
+        <div class="2container">
+            <img src="img/icon2.png" alt="icone Professores Alocados">
+            <h2>Professores Alocados</h2>
+        </div>
+        <div class="3container">
+            <img src="img/icon3.png" alt="icone Turmas Ativadas">
+            <h2>Turmas Ativas</h2>
+        </div>
+        <div class="4container">
+            <img src="img/icon4.png" alt="icone Alocações Pendentes">
+            <h2>Alocações Pendentes</h2>
+        </div>
+
+        <!--Essa parte é aquele primeiro filtro do dashboard-->
+        <div class="filtro">
+            <form action="">
+                <label for="#">Cidade</label>
+                <input type="text" id="Cidade" placeholder="Inserir...">
+                <label for="#">Edital</label>
+                <input type="text" id="edital" placeholder="Inserir...">
+                <label for="#">Dia da semana</label>
+                <input type="text" id="dia_da_semana" placeholder="Inserir...">
+                <label for="#">Horário</label>
+                <input type="text" id="horario" placeholder="Inserir...">
+                <label for="#">Turma</label>
+                <input type="text" id="turma" placeholder="Inserir...">
+                <label for="#">Cronogramas</label>
+                <input type="text" id="cronograma" placeholder="Inserir...">
+                <label for="cidade">Assistente Administrativo</label>
+                <input type="text" id="assistente_adm" placeholder="Inserir...">
+                <label for="cidade">Período</label>
+                <input type="text" id="periodo" placeholder="Inserir...">
+            </form>
+            
+            <button><img src="#" alt="lupa">
+                Buscar Professores
+            </button>
+            <a href="#">
+            <img src="img/icon-repeat" alt="icone de repetição">
+            Limpar filtros
+            </a>
+        </div>
+        
+        <div class="cronograma">
+            <h2>Cronograma Semanal</h2>
+            <table>
+                <caption>
+                    <a><img src="img/icon-perfil" alt="icone de perfil"></a>
+                    Usuário
+                </caption>
+                <thead>
+                <tr>
+                    <th scope="col">Seg</th>
+                    <th scope="col">Ter</th>
+                    <th scope="col">Qua</th>
+                    <th scope="col">Qui</th>
+                    <th scope="col">Sex</th>
+                    <th scope="col">Sab</th>
+                    <th scope="col">Dom</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    <th scope="row">Manhã</th>
+                        <td><a href="#" class="cor-azul"></a></td>
+                        <td><a href="#" class="cor-cinza"></a></td>
+                        <td><a href="#" class="cor-cinza"></a></td>
+                        <td><a href="#" class="cor-amarela"></a></td>
+                        <td><a href="#" class="cor-amarela"></a></td>
+                        <td><a href="#" class="cor-cinza"></a></td>
+                        <td><a href="#" class="cor-vermelha"></a></td>
+                    </tr>
+                    <tr>
+                    
+                    <th scope="row">Tarde</th>
+                        <td><a href="#" class="cor-azul"></a></td>
+                        <td><a href="#" class="cor-azul"></a></td>
+                        <td><a href="#" class="cor-cinza"></a></td>
+                        <td><a href="#" class="cor-amarela"></a></td>
+                        <td><a href="#" class="cor-amarela"></a></td>
+                        <td><a href="#" class="cor-cinza"></a></td>
+                        <td><a href="#" class="cor-cinza"></a></td>
+                    </tr>
+                    
+                    <th scope="row">Noite</th>
+                    <td><a href="#" class="cor-verde"></a></td>
+                        <td><a href="#" class="cor-verde"></a></td>
+                        <td><a href="#" class="cor-verde"></a></td>
+                        <td><a href="#" class="cor-verde"></a></td>
+                        <td><a href="#" class="cor-verde"></a></td>
+                        <td><a href="#" class="cor-cinza"></a></td>
+                        <td><a href="#" class="cor-cinza"></a></td>
+                    </td>
+                </tbody>
+            </table>
+            <div class="cores">
+                <p><a href="#" class="cor-azul"></a>Aula agendada</p>
+                <p><a href="#" class="cor-amarela"></a>Disponível em Breve</p>
+                <p><a href="#" class="cor-verde"></a>Disponível</p>
+                <p><a href="#" class="cor-vermelha"></a>Indisponível</p>
+                <p><a href="#" class="cor-cinza"></a>Sem informação</p>
+            </div>
+        </div>
+        <div class="container-resume">
+            <h2>Resumo da Carga Horária</h2>
+            <a href="#" class="">
+                <p>Horas Contratadas</p>
+                <h2>40h</h2>
+            </a>
+            <a href="#">
+                <p>Horas Alocadas</p>
+                <h2>40h</h2>
+            </a>
+            <a href="#">
+                <p>Horas Livres</p>
+                <h2>40h</h2>
+            </a>
+            <a href="#">
+                <p>Utilização</p>
+                <h2>60%</h2>
+            </a>
+        </div>
+
+        <div class=""></div>
+
+
+    </main>
+</body>
+</html>
