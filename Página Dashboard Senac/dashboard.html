@@ -9,6 +9,25 @@
 <body>
     <!--Esse cabeçalho eu vou colocar em column-->
     <header>
+    <!--Essa é a primeira parte que aparece no dashboard lá em cima-->
+    <div lass="container-professores-disponiveis">
+            <img src="img/icon.png" alt="icone Professores Disponiveis">
+            <h2>Professores Disponíveis</h2>
+        </div>
+        <div class="container-professores-alocados">
+            <img src="img/icon2.png" alt="icone Professores Alocados">
+            <h2>Professores Alocados</h2>
+        </div>
+        <div class="container-turmas-ativadas">
+            <img src="img/icon3.png" alt="icone Turmas Ativadas">
+            <h2>Turmas Ativas</h2>
+        </div>
+        <div class="container-alocacoes-pendentes">
+            <img src="img/icon4.png" alt="icone Alocações Pendentes">
+            <h2>Alocações Pendentes</h2>
+        </div>
+    </header>
+    <aside>
          <div class="container-logo">
         <div class="logo"><a href="#"><img src="img/Senac.png" alt="Senac"></a></div>
     </div>
@@ -24,26 +43,10 @@
         <a href="#" class="foto-de-perfil"><img src="img/icon-perfil" alt="icone de perfil"></a>
         <a href="#" id="perfil"></a>
     </div>
-    </header>
+    </aside>
     <main>
-        <!--Essa é a primeira parte que aparece no dashboard lá em cima-->
-        <div class="1container">
-            <img src="img/icon.png" alt="icone Professores Disponiveis">
-            <h2>Professores Disponíveis</h2>
-        </div>
-        <div class="2container">
-            <img src="img/icon2.png" alt="icone Professores Alocados">
-            <h2>Professores Alocados</h2>
-        </div>
-        <div class="3container">
-            <img src="img/icon3.png" alt="icone Turmas Ativadas">
-            <h2>Turmas Ativas</h2>
-        </div>
-        <div class="4container">
-            <img src="img/icon4.png" alt="icone Alocações Pendentes">
-            <h2>Alocações Pendentes</h2>
-        </div>
-
+      
+        
         <!--Essa parte é aquele primeiro filtro do dashboard-->
         <div class="filtro">
             <form action="">
@@ -73,7 +76,8 @@
             Limpar filtros
             </a>
         </div>
-        
+        <!--Nessa parte vou estar usando table mas nas outras eu acho que vou
+        usar containers-->
         <div class="cronograma">
             <h2>Cronograma Semanal</h2>
             <table>
@@ -83,6 +87,7 @@
                 </caption>
                 <thead>
                 <tr>
+                    <th scope="col"></th>
                     <th scope="col">Seg</th>
                     <th scope="col">Ter</th>
                     <th scope="col">Qua</th>
@@ -93,6 +98,8 @@
                 </tr>
                 </thead>
                 <tbody>
+                    <tr>
+                    </tr>
                     <tr>
                     <th scope="row">Manhã</th>
                         <td><a href="#" class="cor-azul"></a></td>
@@ -136,25 +143,18 @@
         </div>
         <div class="container-resume">
             <h2>Resumo da Carga Horária</h2>
-            <a href="#" class="">
                 <p>Horas Contratadas</p>
                 <h2>40h</h2>
-            </a>
-            <a href="#">
                 <p>Horas Alocadas</p>
-                <h2>40h</h2>
-            </a>
-            <a href="#">
-                <p>Horas Livres</p>
-                <h2>40h</h2>
-            </a>
-            <a href="#">
-                <p>Utilização</p>
-                <h2>60%</h2>
-            </a>
-        </div>
 
-        <div class=""></div>
+                <h2>40h</h2>
+                <p>Horas Livres</p>
+
+                <h2>40h</h2>
+                <p>Utilização</p>
+
+                <h2>60%</h2>
+        </div>
 
 
     </main>
