@@ -51,14 +51,10 @@ body, html {
 }
 
 .logo-container {
-    margin-bottom: 40px;
+    padding: 100fr;
+    margin-bottom: 30px;
 }
 
-.senac-logo {
-    height: 55px; /* Mantém a altura proporcional da imagem idêntica ao original */
-    width: auto;  /* Ajusta a largura automaticamente para não distorcer */
-    display: block;
-}
 
 
 .main-title {
