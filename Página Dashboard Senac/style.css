@@ -1,0 +1,66 @@
+:root{
+    --cor-fundo: #F5F5F5;
+    --cor-retangulo: #FFFAFA;
+    --azul: #085CDD;
+    --laranja: #F2821C;
+    
+}
+
+
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: var(--cor-fundo);
+}
+
+
+header{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    justify-content: space-around;
+}
+
+.container-professores-disponiveis{
+    padding: 40px;
+    background-color: var(--cor-retangulo);
+    border-radius: 20px;
+}
+
+.container-professores-alocados{
+    padding: 40px;
+    background-color: var(--cor-retangulo);
+    border-radius: 20px;
+}
+
+.container-alocacoes-pendentes{
+     padding: 40px;
+    background-color: var(--cor-retangulo);
+    border-radius: 20px;
+}
+
+.container-turmas-ativadas{
+    padding: 40px;
+    background-color: var(--cor-retangulo);
+    border-radius: 20px;
+}
+
+.sidebar{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    
+}
+
+.logo img{
+    width: 150px;
+    
+
+}

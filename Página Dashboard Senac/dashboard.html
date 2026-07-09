@@ -10,7 +10,7 @@
     <!--Esse cabeçalho eu vou colocar em column-->
     <header>
     <!--Essa é a primeira parte que aparece no dashboard lá em cima-->
-    <div lass="container-professores-disponiveis">
+    <div class="container-professores-disponiveis">
             <img src="img/icon.png" alt="icone Professores Disponiveis">
             <h2>Professores Disponíveis</h2>
         </div>
@@ -27,9 +27,11 @@
             <h2>Alocações Pendentes</h2>
         </div>
     </header>
-    <aside>
+    <main>
+      
+        <section class="sidebar">
          <div class="container-logo">
-        <div class="logo"><a href="#"><img src="img/Senac.png" alt="Senac"></a></div>
+        <div class="logo"><a href="dashboard.html"><img src="img/Senac.png" alt="Senac"></a></div>
     </div>
     <div class="menu">
         <ul>
@@ -43,10 +45,8 @@
         <a href="#" class="foto-de-perfil"><img src="img/icon-perfil" alt="icone de perfil"></a>
         <a href="#" id="perfil"></a>
     </div>
-    </aside>
-    <main>
-      
-        
+    </section>
+
         <!--Essa parte é aquele primeiro filtro do dashboard-->
         <div class="filtro">
             <form action="">
@@ -98,8 +98,6 @@
                 </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                    </tr>
                     <tr>
                     <th scope="row">Manhã</th>
                         <td><a href="#" class="cor-azul"></a></td>
@@ -156,6 +154,63 @@
                 <h2>60%</h2>
         </div>
 
+
+
+        <div class="container-resultados-de-busca">
+            <table>
+                <caption>Resultados da Busca</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Professor</th>
+                        <th scope="col">Área de atuação</th>
+                        <th scope="col">Turno</th>
+                        <th scope="col">Horários Livres</th>
+                        <th scope="col">Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    <th scope="row"><img src="#" alt="icon-perfil">Professor</th>
+                    <td>Gestão de saúde</td>
+                    <td>Disponível</td>
+                    <td>16h</td>
+                    <td>Ver Agenda</td>
+                    </tr>
+
+                    <tr>
+                    <th scope="row"><img src="#" alt="icon-perfil">Professor</th>
+                    <td>Informática</td>
+                    <td>Disponível em Breve</td>
+                    <td>16h</td>
+                    <td>Ver Agenda</td>
+                    </tr>
+
+                    <tr>
+                    <th scope="row"><img src="#" alt="icon-perfil">Professor</th>
+                    <td>Saúde</td>
+                    <td>Disponível</td>
+                    <td>16h</td>
+                    <td>Ver Agenda</td> 
+                    </tr>
+
+                    <tr>
+                    <th scope="row"><img src="#" alt="icon-perfil">Professor</th>
+                    <td>Turismo</td>
+                    <td>Indisponível</td>
+                    <td>16h</td>
+                    <td>Ver Agenda</td>
+                    </tr>
+
+                    <tr>
+                    <th scope="row"><img src="#" alt="icon-perfil">Professor</th>
+                    <td>Beleza</td>
+                    <td>Disponível em Breve</td>
+                    <td>16h</td>
+                    <td>Ver Agenda</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
     </main>
 </body>
