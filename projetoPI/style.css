@@ -50,9 +50,9 @@ body, html {
     width: 100%;
 }
 
-.logo-container {
-    padding: 100fr;
-    margin-bottom: 30px;
+.senac-logo {
+   width: 50%;
+   height: auto;
 }
 
 
@@ -79,7 +79,6 @@ body, html {
     border-radius: 2px;
 }
 
-/* Lista de Funcionalidades */
 .features-list {
     display: flex;
     flex-direction: column;
@@ -118,7 +117,6 @@ body, html {
     line-height: 1.4;
 }
 
-/* Lado Direito - Painel de Login */
 .right-side {
     flex: 1.2;
     background-color: #fdfdfd;
@@ -132,7 +130,6 @@ body, html {
     position: relative;
 }
 
-/* Card de Login */
 .login-card {
     background-color: #ffffff;
     width: 100%;
@@ -178,7 +175,6 @@ body, html {
     padding: 0 10px;
 }
 
-/* Formulário e Inputs */
 .input-container {
     margin-bottom: 22px;
 }
@@ -331,6 +327,19 @@ body, html {
     color: #94a3b8;
     text-align: center;
     letter-spacing: 0.2px;
+}
+
+.cadastro-link {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 13px;
+    color: black;
+}
+
+.cadastro-link a {
+    color: #2563ed;
+    text-decoration: none;
+    font-weight: 600;
 }
 
 /* Responsividade para Telas Menores / Tablets e Celulares */

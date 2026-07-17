@@ -40,8 +40,8 @@ body {
 }
 
 .logo-area img {
-    padding: 100fr;
-    margin-bottom: 30px;
+    width: 300PX;
+    height: auto;
 }
 
 .sidebar h1 {
