@@ -1,0 +1,63 @@
+/* Configuração geral do layout */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f9;
+    padding: 20px;
+}
+
+.agenda-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Estrutura da Tabela */
+table {
+    width: 100%;
+    border-collapse: collapse; /* Remove espaços duplos entre as bordas */
+}
+
+th, td {
+    border: 1px solid #e0e0e0;
+    text-align: center;
+    padding: 10px;
+    height: 40px; /* Altura padrão para as células vazias */
+}
+
+/* Cabeçalho dos dias da semana */
+th {
+    background-color: #f8f9fa;
+    color: #333;
+    font-weight: normal;
+}
+
+/* Coluna de Horários */
+.hora {
+    background-color: #ffffff;
+    font-weight: 500;
+    width: 80px;
+    color: #555;
+}
+
+/* Classes de Cores Baseadas na Legenda da Imagem */
+.agendada {
+    background-color: #6495ed; /* Azul */
+}
+
+.breve {
+    background-color: #ffb366; /* Laranja */
+    border-radius: 4px; /* Opcional: para dar o efeito arredondado interna */
+}
+
+.disponivel {
+    background-color: #d4edda; /* Verde claro */
+    border: 2px solid #c3e6cb;
+}
+
+.indisponivel {
+    background-color: #f8d7da; /* Vermelho claro */
+    border: 2px solid #f5c6cb;
+}
