@@ -1,0 +1,391 @@
+/* ========================= */
+/* RESET */
+/* ========================= */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f5f7fa;
+    color: #333;
+}
+
+/* ========================= */
+/* CONTAINER */
+/* ========================= */
+
+.container{
+    width: 95%;
+    max-width: 1500px;
+    margin: 40px auto;
+}
+
+/* ========================= */
+/* CARD DO PROFESSOR */
+/* ========================= */
+
+.teacher-card{
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 25px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    box-shadow: 0 2px 10px rgba(0,0,0,.08);
+
+    margin-bottom: 30px;
+}
+
+.teacher-info{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.teacher-photo img{
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.teacher-name{
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.teacher-area{
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.teacher-status{
+    display: inline-block;
+    padding: 6px 15px;
+    border-radius: 20px;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.available{
+    background: #22c55e;
+}
+
+.profile-button{
+    background: #2563eb;
+    color: white;
+
+    border: none;
+
+    padding: 12px 22px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-size: 15px;
+
+    transition: .3s;
+}
+
+.profile-button:hover{
+
+    background: #1d4ed8;
+
+}
+
+/* ========================= */
+/* CARD DA AGENDA */
+/* ========================= */
+
+.schedule-card{
+
+    background: white;
+
+    border-radius: 15px;
+
+    padding: 30px;
+
+    box-shadow: 0 2px 10px rgba(0,0,0,.08);
+
+}
+
+/* ========================= */
+/* TITULO */
+/* ========================= */
+
+.schedule-header{
+
+    margin-bottom: 25px;
+
+}
+
+.schedule-header h2{
+
+    font-size: 28px;
+
+}
+
+/* ========================= */
+/* FILTROS */
+/* ========================= */
+
+.filters{
+
+    margin-bottom: 30px;
+
+}
+
+.filters-form{
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 20px;
+
+    align-items: end;
+
+}
+
+.filter-group{
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+.filter-group label{
+
+    margin-bottom: 6px;
+
+    font-weight: bold;
+
+}
+
+.filter-group select{
+
+    width: 220px;
+
+    padding: 10px;
+
+    border-radius: 8px;
+
+    border: 1px solid #ccc;
+
+}
+
+.filter-buttons{
+
+    display: flex;
+
+    gap: 10px;
+
+}
+
+.search-button{
+
+    background: #2563eb;
+
+    color: white;
+
+    border: none;
+
+    padding: 10px 20px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+}
+
+.clear-button{
+
+    background: #f1f5f9;
+
+    border: none;
+
+    padding: 10px 20px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+}
+
+.export-button-area{
+
+    margin-left: auto;
+
+}
+
+.export-button{
+
+    background: #2563eb;
+
+    color: white;
+
+    border: none;
+
+    padding: 10px 20px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+}
+
+/* ========================= */
+/* LEGENDA */
+/* ========================= */
+
+.legend{
+
+    display: flex;
+
+    gap: 25px;
+
+    margin-bottom: 30px;
+
+    flex-wrap: wrap;
+
+}
+
+.legend-item{
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+}
+
+.legend-color{
+
+    width: 16px;
+
+    height: 16px;
+
+    border-radius: 4px;
+
+}
+
+.scheduled{
+
+    background: #2563eb;
+
+}
+
+.soon{
+
+    background: orange;
+
+}
+
+.unavailable{
+
+    background: crimson;
+
+}
+
+.no-info{
+
+    background: gray;
+
+}
+
+/* ========================= */
+/* TABELA */
+/* ========================= */
+
+.schedule-table{
+
+    overflow-x: auto;
+
+}
+
+table{
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+}
+
+thead{
+
+    background: #2563eb;
+
+    color: white;
+
+}
+
+th,
+td{
+
+    border: 1px solid #ddd;
+
+    text-align: center;
+
+    padding: 14px;
+
+}
+
+th{
+
+    font-weight: bold;
+
+}
+
+tbody tr:nth-child(even){
+
+    background: #fafafa;
+
+}
+
+/* ========================= */
+/* EVENTOS */
+/* ========================= */
+
+.event{
+
+    width: 100%;
+
+    height: 35px;
+
+    border-radius: 8px;
+
+}
+
+.event.scheduled{
+
+    background: #2563eb;
+
+}
+
+.event.available{
+
+    background: #22c55e;
+
+}
+
+.event.unavailable{
+
+    background: crimson;
+
+}
+
+.event.soon{
+
+    background: orange;
+
+}
