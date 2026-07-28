@@ -237,7 +237,6 @@ body {
     border-color: var(--blue-medium);
 }
 
-/* Regras de Senha */
 .password-rules {
     grid-column: span 2;
     background-color: #f8fafc;
