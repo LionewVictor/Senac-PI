@@ -1,217 +1,273 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portal Senac</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css" integrity="sha512-ApSLB1Pd3/bZN8fWB/RG9YhN/7bd9Hkf3AGaE2mPfebjrxagjuBtx2GcgdqIlJkUzwylBo61r9Xa9NmgBI0swA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   <title>Projeto Senac - Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
 </head>
 <body>
-    <!--Esse cabeçalho eu vou colocar em column-->
-    <header>
-    <!--Essa é a primeira parte que aparece no dashboard lá em cima-->
-    <div class="container-professores-disponiveis">
-            <img src="img/icon.png" alt="icone Professores Disponiveis">
-            <h2>Professores Disponíveis</h2>
-        </div>
-        <div class="container-professores-alocados">
-            <img src="img/icon2.png" alt="icone Professores Alocados">
-            <h2>Professores Alocados</h2>
-        </div>
-        <div class="container-turmas-ativadas">
-            <img src="img/icon3.png" alt="icone Turmas Ativadas">
-            <h2>Turmas Ativas</h2>
-        </div>
-        <div class="container-alocacoes-pendentes">
-            <img src="img/icon4.png" alt="icone Alocações Pendentes">
-            <h2>Alocações Pendentes</h2>
-        </div>
-    </header>
-    <main>
-      
-        <section class="sidebar">
-    <div class="menu">
-        <div class="container-logo">
-        <div class="logo"><a href="dashboard.html"><img src="img/logo-branco-80-anos.png" alt="Senac"></a></div>
-    </div>
-        <ul>
-            <li><a href="#">Dashboard</a></li>
-            <li><a href="#">Buscar Professores</a></li>
-            <li><a href="#">Buscar Turmas</a></li>
-            <li><a href="#">Agenda Geral</a></li>
-            <li><a href="#">Alocações</a></li>
-        </ul>
-        <!--Essa parte vou usar pra criar um perfil para o usuário-->
-        <a href="#" class="foto-de-perfil"><img src="img/icon-perfil" alt="icone de perfil"></a>
-        <a href="#" id="perfil"></a>
-    </div>
-    </section>
 
-        <!--Essa parte é aquele primeiro filtro do dashboard-->
-        <div class="filtro">
-            <form action="">
-                <label for="#">Cidade</label>
-                <input type="text" id="Cidade" placeholder="Inserir...">
-                <label for="#">Edital</label>
-                <input type="text" id="edital" placeholder="Inserir...">
-                <label for="#">Dia da semana</label>
-                <input type="text" id="dia_da_semana" placeholder="Inserir...">
-                <label for="#">Horário</label>
-                <input type="text" id="horario" placeholder="Inserir...">
-                <label for="#">Turma</label>
-                <input type="text" id="turma" placeholder="Inserir...">
-                <label for="#">Cronogramas</label>
-                <input type="text" id="cronograma" placeholder="Inserir...">
-                <label for="cidade">Assistente Administrativo</label>
-                <input type="text" id="assistente_adm" placeholder="Inserir...">
-                <label for="cidade">Período</label>
-                <input type="text" id="periodo" placeholder="Inserir...">
-            </form>
+    <!-- SIDEBAR LATERAL ESQUERDA -->
+    <aside class="sidebar">
+        <div class="sidebar-top">
+            <div>
+                <img src="https://portal.sc.senac.br/assets/images/logo-branco-80-anos.png" alt="senac" class="logo-area">
+            </div>
+            <br>
+            <hr>
+            <br>
             
-            <button><img src="#" alt="lupa">
-                Buscar Professores
-            </button>
-            <a href="#">
-            <img src="img/icon-repeat" alt="icone de repetição">
-            Limpar filtros
-            </a>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="nav-item active"><i class="fa-solid fa-chart-line"></i> Dashboard</li>
+                    <li class="nav-item"><i class="fa-solid fa-magnifying-glass"></i> Buscar Professores</li>
+                    <li class="nav-item"><i class="fa-solid fa-users"></i> Buscar Turmas</li>
+                    <li class="nav-item"><i class="fa-slab-press fa-regular fa-calendar"></i> Agenda Geral</li>
+                    <li class="nav-item"><i class="fa-solid fa-list"></i> Alocações</li>
+                    <li class="nav-item"><i class="fa-solid fa-gear"></i> Configurações</li>
+                </ul>
+            </nav>
         </div>
-        <!--Nessa parte vou estar usando table mas nas outras eu acho que vou
-        usar containers-->
-        <div class="cronograma">
-            <h2>Cronograma Semanal</h2>
-            <table>
-                <caption>
-                    <a><img src="img/icon-perfil" alt="icone de perfil"></a>
-                    Usuário
-                </caption>
-                <thead>
-                <tr>
-                    <th scope="col"></th>
-                    <th scope="col">Seg</th>
-                    <th scope="col">Ter</th>
-                    <th scope="col">Qua</th>
-                    <th scope="col">Qui</th>
-                    <th scope="col">Sex</th>
-                    <th scope="col">Sab</th>
-                    <th scope="col">Dom</th>
-                </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                    <th scope="row">Manhã</th>
-                        <td><a href="#" class="cor-azul"></a></td>
-                        <td><a href="#" class="cor-cinza"></a></td>
-                        <td><a href="#" class="cor-cinza"></a></td>
-                        <td><a href="#" class="cor-amarela"></a></td>
-                        <td><a href="#" class="cor-amarela"></a></td>
-                        <td><a href="#" class="cor-cinza"></a></td>
-                        <td><a href="#" class="cor-vermelha"></a></td>
-                    </tr>
-                    <tr>
-                    
-                    <th scope="row">Tarde</th>
-                        <td><a href="#" class="cor-azul"></a></td>
-                        <td><a href="#" class="cor-azul"></a></td>
-                        <td><a href="#" class="cor-cinza"></a></td>
-                        <td><a href="#" class="cor-amarela"></a></td>
-                        <td><a href="#" class="cor-amarela"></a></td>
-                        <td><a href="#" class="cor-cinza"></a></td>
-                        <td><a href="#" class="cor-cinza"></a></td>
-                    </tr>
-                    
-                    <th scope="row">Noite</th>
-                    <td><a href="#" class="cor-verde"></a></td>
-                        <td><a href="#" class="cor-verde"></a></td>
-                        <td><a href="#" class="cor-verde"></a></td>
-                        <td><a href="#" class="cor-verde"></a></td>
-                        <td><a href="#" class="cor-verde"></a></td>
-                        <td><a href="#" class="cor-cinza"></a></td>
-                        <td><a href="#" class="cor-cinza"></a></td>
-                    </td>
-                </tbody>
-            </table>
-            <div class="cores">
-                <p><a href="#" class="cor-azul"></a>Aula agendada</p>
-                <p><a href="#" class="cor-amarela"></a>Disponível em Breve</p>
-                <p><a href="#" class="cor-verde"></a>Disponível</p>
-                <p><a href="#" class="cor-vermelha"></a>Indisponível</p>
-                <p><a href="#" class="cor-cinza"></a>Sem informação</p>
+
+        <div class="sidebar-footer">
+            <div class="avatar">PG</div>
+            <div class="user-details">
+                <span class="user-name">Pedagógico</span>
+                <span class="user-role">Equipe Senac</span>
             </div>
         </div>
-        <div class="container-resume">
-            <h2>Resumo da Carga Horária</h2>
-                <p>Horas Contratadas</p>
-                <h2>40h</h2>
-                <p>Horas Alocadas</p>
+    </aside>
 
-                <h2>40h</h2>
-                <p>Horas Livres</p>
+    <main class="main-content">
 
-                <h2>40h</h2>
-                <p>Utilização</p>
+    <!-- CARDS -->
+    <section class="cards">
 
-                <h2>60%</h2>
+        <div class="card">
+            <div class="icone"><i class="fa-solid fa-users"></i></div>
+
+            <div class="info">
+                <h4>Professores Disponíveis</h4>
+                <span id="spn-profDisponiveis"></span>
+            </div>
         </div>
 
+        <div class="card">
+            <div class="icone"><i class="fa-solid fa-user-clock"></i></div>
 
+            <div class="info">
+                <h4>Professores Alocados</h4>
+                <span id="spn-profAlocados"></span>
+            </div>
+        </div>
 
-        <div class="container-resultados-de-busca">
+        <div class="card">
+            <div class="icone"><i class="fa-solid fa-graduation-cap"></i></div>
+
+            <div class="info">
+                <h4>Turmas Ativas</h4>
+                <span id="spn-turmasAtivas"></span>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="icone"><i class="fa-regular fa-alarm-clock"></i></div>
+
+            <div class="info">
+                <h4>Alocações Pendentes</h4>
+                <span id="spn-alocacoesPendentes"></span>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- FILTROS -->
+    <section class="filtro">
+
+        <h3>Filtro de Busca</h3>
+
+        <form class="form-filtro">
+
+            <select>
+                <option>Cidade</option>
+            </select>
+
+            <select>
+                <option>Edital</option>
+            </select>
+
+            <select>
+                <option>Dia da Semana</option>
+            </select>
+
+            <select>
+                <option>Horário</option>
+            </select>
+
+            <select>
+                <option>Turma</option>
+            </select>
+
+            <select>
+                <option>Cronograma</option>
+            </select>
+
+            <select>
+                <option>Assistente adm.</option>
+            </select>
+
+            <select>
+                <option>Período</option>
+            </select>
+
+            <button type="submit">
+                Buscar
+            </button>
+
+        </form>
+
+    </section>
+
+    <!-- CONTEÚDO -->
+    <section class="conteudo">
+
+        <!-- RESULTADOS -->
+        <div class="resultado">
+
+            <h2>Resultados da Busca</h2>
+
             <table>
-                <caption>Resultados da Busca</caption>
+
                 <thead>
+
                     <tr>
-                        <th scope="col">Professor</th>
-                        <th scope="col">Área de atuação</th>
-                        <th scope="col">Turno</th>
-                        <th scope="col">Horários Livres</th>
-                        <th scope="col">Ações</th>
+
+                        <th>Professor</th>
+                        <th>Área</th>
+                        <th>Status</th>
+                        <th>Horas</th>
+                        <th>Ações</th>
+
                     </tr>
+
                 </thead>
+
                 <tbody>
+
                     <tr>
-                    <th scope="row"><img src="#" alt="icon-perfil">Professor</th>
-                    <td>Gestão de saúde</td>
-                    <td>Disponível</td>
-                    <td>16h</td>
-                    <td>Ver Agenda</td>
+
+                        <td>Professor</td>
+                        <td>Gestão de Negócios</td>
+                        <td><span class="disponivel">Disponível</span></td>
+                        <td>16h</td>
+                        <td><button>Ver Agenda</button></td>
+
                     </tr>
 
                     <tr>
-                    <th scope="row"><img src="#" alt="icon-perfil">Professor</th>
-                    <td>Informática</td>
-                    <td>Disponível em Breve</td>
-                    <td>16h</td>
-                    <td>Ver Agenda</td>
+
+                        <td>Professor</td>
+                        <td>Informática</td>
+                        <td><span class="breve">Disponível em breve</span></td>
+                        <td>16h</td>
+                        <td><button>Ver Agenda</button></td>
+
                     </tr>
 
                     <tr>
-                    <th scope="row"><img src="#" alt="icon-perfil">Professor</th>
-                    <td>Saúde</td>
-                    <td>Disponível</td>
-                    <td>16h</td>
-                    <td>Ver Agenda</td> 
+
+                        <td>Professor</td>
+                        <td>Saúde</td>
+                        <td><span class="disponivel">Disponível</span></td>
+                        <td>16h</td>
+                        <td><button>Ver Agenda</button></td>
+
                     </tr>
 
                     <tr>
-                    <th scope="row"><img src="#" alt="icon-perfil">Professor</th>
-                    <td>Turismo</td>
-                    <td>Indisponível</td>
-                    <td>16h</td>
-                    <td>Ver Agenda</td>
+
+                        <td>Professor</td>
+                        <td>Turismo</td>
+                        <td><span class="indisponivel">Indisponível</span></td>
+                        <td>16h</td>
+                        <td><button>Ver Agenda</button></td>
+
                     </tr>
 
                     <tr>
-                    <th scope="row"><img src="#" alt="icon-perfil">Professor</th>
-                    <td>Beleza</td>
-                    <td>Disponível em Breve</td>
-                    <td>16h</td>
-                    <td>Ver Agenda</td>
+
+                        <td>Professor</td>
+                        <td>Beleza</td>
+                        <td><span class="breve">Disponível em breve</span></td>
+                        <td>16h</td>
+                        <td><button>Ver Agenda</button></td>
+
                     </tr>
+
                 </tbody>
+
             </table>
+
         </div>
 
-    </main>
+        <!-- LADO DIREITO -->
+        <div class="painel">
+
+            <!-- CRONOGRAMA -->
+
+            <div class="cronograma">
+
+                <h2>Cronograma Semanal</h2>
+
+                <div class="grade">
+
+                    <!-- aqui depois você monta com CSS Grid -->
+
+                </div>
+
+            </div>
+
+            <!-- RESUMO -->
+
+            <div class="resumo">
+
+                <h2>Resumo de Carga Horária</h2>
+
+                <div class="cards-resumo">
+
+                    <div class="mini-card">
+                        <small>Horas Contratadas</small>
+                        <h3>40h</h3>
+                    </div>
+
+                    <div class="mini-card">
+                        <small>Horas Alocadas</small>
+                        <h3>24h</h3>
+                    </div>
+
+                    <div class="mini-card">
+                        <small>Horas Livres</small>
+                        <h3>16h</h3>
+                    </div>
+
+                    <div class="mini-card">
+                        <small>Utilização</small>
+                        <h3>60%</h3> 
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.10.3/sql-wasm.js"></script>
+<script src="dashboard.js"></script>
 </body>
 </html>
