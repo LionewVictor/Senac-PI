@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Senac - Alocações de Professores</title>
+
+    <link rel="stylesheet" href="style.css"/>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css"/>
+
+</head>
+
+<body>
+    <section class="esquerda">
+      <div class="logo">
+        <img class="logo-1" src="https://espacodocente.senac.br/wp-content/uploads/2026/03/logo-senac-80-anos.png" alt="LogoSenac"/>
+      </div>
+
+      <div class="linha"></div>
+
+      <nav>
+        <a href="#">
+          <i class="fa-solid fa-table-columns"></i>
+          Dashboard
+        </a>
+
+        <a href="#">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          Buscar Professores
+        </a>
+
+        <a href="#">
+          <i class="fa-solid fa-chalkboard-user"></i>
+          Buscar Turmas
+        </a>
+
+        <a href="#">
+          <i class="fa-regular fa-calendar"></i>
+          Agenda Geral
+        </a>
+
+        <a href="#" class="ativo">
+          <i class="fa-slab-press fa-regular fa-clipboard"></i>
+          Alocações
+        </a>
+
+        <a href="#">
+          <i class="fa-solid fa-gear"></i>
+          Configurações
+        </a>
+      </nav>
+
+      <div class="usuario">
+        <div class="foto">
+            PG
+        </div>
+
+        <div class="dados">
+          <h4>Pedagógico</h4>
+          <span>Equipe Senac</span>
+        </div>
+      </div>
+    </section>
+
+    <main class="conteudo">
+      <header class="topo">
+        <div>
+          <h1>Alocações de Professores</h1>
+
+          <p>
+            Gerencie e acompanhe todas as alocações de professores nas turmas e
+            disciplinas
+          </p>
+        </div>
+
+        <div class="notificacao">
+          <i class="fa-regular fa-bell"></i>
+        </div>
+      </header>
+
+      <section class="cards">
+        <div class="card">
+          <div class="icone azul">
+            <i class="fa-solid fa-users"></i>
+          </div>
+
+          <div class="texto">
+            <span>Total de Alocações</span>
+
+            <h2>342</h2>
+
+            <p>Este mês</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="icone verde">
+            <i class="fa-regular fa-circle-check"></i>
+          </div>
+
+          <div class="texto">
+            <span>Alocações Ativas</span>
+
+            <h2>256</h2>
+
+            <p>75% do total</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="icone amarelo">
+            <i class="fa-regular fa-clock"></i>
+          </div>
+
+          <div class="texto">
+            <span>Alocações Pendentes</span>
+
+            <h2>18</h2>
+
+            <p>5% do total</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="icone cinza">
+            <i class="fa-regular fa-circle-check"></i>
+          </div>
+
+          <div class="texto">
+            <span>Alocações Encerradas</span>
+
+            <h2>68</h2>
+
+            <p>20% do total</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="filtros">
+        <h2>Filtros de Busca</h2>
+
+        <form>
+          <div class="grupo">
+            <label>Instrutor</label>
+
+            <select>
+              <option>Selecione um Instrutor</option>
+            </select>
+          </div>
+
+          <div class="grupo">
+            <label>Turma</label>
+
+            <select>
+              <option>Selecione uma turma</option>
+            </select>
+          </div>
+
+          <div class="grupo">
+            <label>Curso</label>
+
+            <select>
+              <option>Selecione um curso</option>
+            </select>
+          </div>
+
+          <div class="grupo">
+            <label>Cidade</label>
+
+            <select>
+              <option>Selecione a Cidade</option>
+            </select>
+          </div>
+
+          <div class="grupo">
+            <label>Cronograma</label>
+
+            <select>
+              <option>Selecione o Cronograma</option>
+            </select>
+          </div>
+
+          <div class="grupo">
+            <label>Data</label>
+
+            <input type="date" />
+          </div>
+
+          <div class="grupo">
+            <label>Horário</label>
+
+            <input type="time" />
+          </div>
+
+          <div class="grupo">
+            <label>Período</label>
+
+            <select>
+              <option>Selecione o Período</option>
+            </select>
+          </div>
+
+          <div class="grupo">
+            <label>Edital</label>
+
+            <select>
+              <option>Selecione o Edital</option>
+            </select>
+          </div>
+
+          <div class="grupo">
+            <label>Assistente Administrativo</label>
+
+            <select>
+              <option>Selecione um Assistente</option>
+            </select>
+          </div>
+
+          <div class="grupo">
+            <label>Prática / PI</label>
+
+            <select>
+              <option>Selecione a Turma</option>
+            </select>
+          </div>
+
+          <div class="grupo">
+            <label>Insumos</label>
+
+            <select>
+              <option>Selecione o Insumo</option>
+            </select>
+          </div>
+
+          <div class="grupo">
+            <label>Material (PTD)</label>
+
+            <select>
+              <option>Selecione o Material</option>
+            </select>
+          </div>
+
+          <div class="grupo">
+            <label>Avaliação</label>
+
+            <select>
+              <option>Avaliação</option>
+            </select>
+          </div>
+
+          <div class="grupo">
+            <label>Feedback</label>
+
+            <select>
+              <option>Feedback</option>
+            </select>
+          </div>
+
+          <div class="grupo">
+            <label>Código</label>
+
+            <input type="text" placeholder="Insira o Código" />
+          </div>
+
+          <div class="botoes-filtro">
+            <button type="reset" class="btn-limpar">Limpar filtros</button>
+
+            <button type="submit" class="btn-buscar">
+              <i class="fa-solid fa-magnifying-glass"></i>
+
+              Buscar
+            </button>
+          </div>
+        </form>
+      </section>
+
+  <section class="tabela">
+      <div class="abas">
+          <button class="ativo">Todas as Alocações</button>
+          <button>Ativas</button>
+          <button>Encerradas</button>
+          <button>Pendentes</button>
+      </div>
+
+      <div class="tabela-scroll">
+          <table>
+              <thead>
+                  <tr>
+                      <th>Instrutor</th>
+                      <th>Turma</th>
+                      <th>Curso / Disciplina</th>
+                      <th>Cidade</th>
+                      <th>Cronograma</th>
+                      <th>Data</th>
+                      <th>Horário</th>
+                      <th>Período</th>
+                      <th>Edital</th>
+                      <th class="th1">Assistente Administrativo</th>
+                      <th>Prática / PI</th>
+                      <th>Insumos</th>
+                      <th>Material (PTD)</th>
+                      <th>Avaliação</th>
+                      <th>Feedback</th>
+                      <th>Código</th>
+                  </tr>
+              </thead>
+
+              <tbody>
+
+                  <tr>
+                      <td class="professor">
+                          <div class="avatar">
+                              <i class="fa-solid fa-user"></i>
+                          </div>
+
+                          <div>
+                              <h4>Ana Paula Martins</h4>
+                              
+                          </div>
+                      </td>
+
+                      <td>
+                          Sala: 204<br>
+                          GE-01
+                      </td>
+
+                      <td>Gestão de Pessoas</td>
+
+                      <td>
+                          Senac Centro<br>
+                          Brasília - DF
+                      </td>
+
+                      <td>20/05/2026 - 20/09/2026</td>
+
+                      <td>40h</td>
+
+                      <td>Semanal</td>
+
+                      <td>Manhã</td>
+
+                      <td>2026/028</td>
+
+                      <td>
+                          Sala: 204<br>
+                          GE-01
+                      </td>
+
+                      <td>
+                          Sala: 204<br>
+                          GE-01
+                      </td>
+
+                      <td>
+                          Senac Centro<br>
+                          Brasília - DF
+                      </td>
+
+                      <td>20/05/2026 - 20/09/2026</td>
+
+                      <td>40h</td>
+
+                      <td>Semanal</td>
+
+                      <td>GE-01</td>
+                  </tr>
+
+                  <tr>
+                      <td class="professor">
+                          <div class="avatar">
+                              <i class="fa-solid fa-user"></i>
+                          </div>
+
+                          <div>
+                              <h4>Carlos Eduardo Silva</h4>
+                              
+                          </div>
+                      </td>
+
+                      <td>
+                          Sala: 202<br>
+                          IN-02
+                      </td>
+
+                      <td>Programação Web</td>
+
+                      <td>
+                          Senac Centro<br>
+                          Brasília - DF
+                      </td>
+
+                      <td>15/05/2026 - 15/09/2026</td>
+
+                      <td>24h</td>
+
+                      <td>Semanal</td>
+
+                      <td>Tarde</td>
+
+                      <td>2026/018</td>
+
+                      <td>
+                          Sala: 202<br>
+                          IN-02
+                      </td>
+
+                      <td>
+                          Sala: 202<br>
+                          IN-02
+                      </td>
+
+                      <td>
+                          Senac Centro<br>
+                          Brasília - DF
+                      </td>
+
+                      <td>15/05/2026 - 15/09/2026</td>
+
+                      <td>24h</td>
+
+                      <td>Semanal</td>
+
+                      <td>IN-02</td>
+                  </tr>
+
+                  <tr>
+                      <td class="professor">
+                          <div class="avatar">
+                              <i class="fa-solid fa-user"></i>
+                          </div>
+
+                          <div>
+                              <h4>Juliana Ribeiro Costa</h4>
+                              
+                          </div>
+                      </td>
+
+                      <td>
+                          Sala: 205<br>
+                          SA-03
+                      </td>
+
+                      <td>Anatomia e Fisiologia</td>
+
+                      <td>
+                          Senac Taguatinga<br>
+                          Brasília - DF
+                      </td>
+
+                      <td>10/06/2026 - 10/10/2026</td>
+
+                      <td>30h</td>
+
+                      <td>Semanal</td>
+
+                      <td>Noite</td>
+
+                      <td>2026/041</td>
+
+                      <td>
+                          Sala: 205<br>
+                          SA-03
+                      </td>
+
+                      <td>
+                          Sala: 205<br>
+                          SA-03
+                      </td>
+
+                      <td>
+                          Senac Taguatinga<br>
+                          Brasília - DF
+                      </td>
+
+                      <td>10/06/2026 - 10/10/2026</td>
+
+                      <td>30h</td>
+
+                      <td>Semanal</td>
+
+                      <td>SA-03</td>
+                  </tr>
+
+                  <tr>
+                      <td class="professor">
+                          <div class="avatar">
+                              <i class="fa-solid fa-user"></i>
+                          </div>
+
+                          <div>
+                              <h4>Marcos Vinícius Lima</h4>
+                              
+                          </div>
+                      </td>
+
+                      <td>
+                          Sala: 205<br>
+                          TH-01
+                      </td>
+
+                      <td>Hospitalidade e Atendimento</td>
+
+                      <td>
+                          Senac Ceilândia<br>
+                          Brasília - DF
+                      </td>
+
+                      <td>01/04/2026 - 30/07/2026</td>
+
+                      <td>20h</td>
+
+                      <td>Semanal</td>
+
+                      <td>Tarde</td>
+
+                      <td>2026/012</td>
+
+                      <td>
+                          Sala: 205<br>
+                          TH-01
+                      </td>
+
+                      <td>
+                          Sala: 205<br>
+                          TH-01
+                      </td>
+
+                      <td>
+                          Senac Ceilândia<br>
+                          Brasília - DF
+                      </td>
+
+                      <td>01/04/2026 - 30/07/2026</td>
+
+                      <td>20h</td>
+
+                      <td>Semanal</td>
+
+                      <td>TH-01</td>
+                  </tr>
+
+                  <tr>
+                      <td class="professor">
+                          <div class="avatar">
+                              <i class="fa-solid fa-user"></i>
+                          </div>
+
+                          <div>
+                              <h4>Patrícia Souza Mendes</h4>
+                              
+                          </div>
+                      </td>
+
+                      <td>
+                          Sala: 201<br>
+                          BZ-02
+                      </td>
+
+                      <td>Maquiagem Profissional</td>
+
+                      <td>
+                          Senac Centro<br>
+                          Brasília - DF
+                      </td>
+
+                      <td>20/05/2026 - 20/11/2026</td>
+
+                      <td>16h</td>
+
+                      <td>Semanal</td>
+
+                      <td>Manhã</td>
+
+                      <td>2026/034</td>
+
+                      <td>
+                          Sala: 201<br>
+                          BZ-02
+                      </td>
+
+                      <td>
+                          Sala: 201<br>
+                          BZ-02
+                      </td>
+
+                      <td>
+                          Senac Centro<br>
+                          Brasília - DF
+                      </td>
+
+                      <td>20/05/2026 - 20/11/2026</td>
+
+                      <td>16h</td>
+
+                      <td>Semanal</td>
+
+                      <td>BZ-02</td>
+                  </tr>
+
+              </tbody>
+          </table>
+      </div>
+
+      <div class="rodape-tabela">
+          <span>Mostrando de 1 a 5 de 300</span>
+
+          <div class="paginacao">
+              <i class="fa-solid fa-angle-left"></i>
+
+              <button class="pagina ativa">1</button>
+              <button class="pagina">2</button>
+              <button class="pagina">3</button>
+
+              <span>...</span>
+
+              <button class="pagina">15</button>
+
+              <i class="fa-solid fa-angle-right"></i>
+          </div>
+
+          <div class="itens">
+              <span>Itens por página</span>
+
+              <select>
+                  <option selected>5</option>
+                  <option>10</option>
+                  <option>15</option>
+                  <option>20</option>
+              </select>
+          </div>
+      </div>
+  </section>
+      
+    </main>
+</body>
+</html>
