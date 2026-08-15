@@ -91,30 +91,30 @@
         <form class="form-filtro">
 
             <select id="selectCidade">
-                <option>Cidade</option>
+                <option value="", selected disabled>Cidade</option>
             </select>
 
             <select id="selectDiaDaSemana">
-                <option>Dia da Semana</option>
+                <option value="", selected disabled>Dia da Semana</option>
             </select>
 
             <select id="selectHorario">
-                <option>Horário</option>
+                <option value="", selected disabled>Horário</option>
             </select>
 
             <select id="selectTurma">
-                <option>Turma</option>
+                <option value="", selected disabled>Turma</option>
             </select>
 
             <select id="selectAssistenteAdm">
-                <option>Assistente adm.</option>
+                <option value="", selected disabled>Assistente adm.</option>
             </select>
 
             <select id="selectPeriodo">
-                <option>Período</option>
+                <option value="", selected disabled>Período</option>
             </select>
 
-            <button type="submit" id="btn_buscar">
+            <button type="button" id="btn_buscar">
                 Buscar
             </button>
 
@@ -146,7 +146,7 @@
 
                 </thead>
 
-                <tbody>
+                <tbody id="resultadosBusca">
 
                     <tr>
 
@@ -215,7 +215,7 @@
 
                 <div class="grade">
 
-                    <!-- aqui depois você monta com CSS Grid -->
+                    <!-- aqui depois você monta com CSS Grid-->
 
                 </div>
 

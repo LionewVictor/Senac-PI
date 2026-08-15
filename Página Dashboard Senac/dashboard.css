@@ -409,3 +409,406 @@ td button:hover{
     }
 
 }
+
+/* =====================================================
+   RESULTADOS DA BUSCA
+===================================================== */
+
+.resultado {
+    overflow: hidden;
+}
+
+.resultado table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.resultado th {
+    padding: 14px 10px;
+    text-align: left;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    color: #64748b;
+
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.resultado td {
+    padding: 14px 10px;
+
+    font-size: 13px;
+    color: #334155;
+
+    border-bottom: 1px solid #edf0f4;
+
+    vertical-align: middle;
+}
+
+.resultado tbody tr {
+    transition: background 0.2s ease;
+}
+
+.resultado tbody tr:hover {
+    background: #f8fafc;
+}
+
+
+/* =====================================================
+   PROFESSOR
+===================================================== */
+
+.resultado td:first-child {
+    width: 30%;
+}
+
+.professor-info {
+    display: flex !important;
+    align-items: center;
+    gap: 10px;
+}
+
+.professor-avatar {
+    flex: 0 0 36px;
+
+    width: 36px;
+    height: 36px;
+
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #e8f0ff;
+    color: #1264d6;
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.professor-info > div:last-child {
+    min-width: 0;
+}
+
+.professor-info strong {
+    display: block !important;
+
+    color: #1e293b;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.professor-info small {
+    display: block !important;
+
+    margin-top: 3px;
+
+    color: #94a3b8;
+
+    font-size: 11px;
+}
+
+
+/* =====================================================
+   ÁREA
+===================================================== */
+
+.area-professor {
+    color: #475569;
+    font-size: 12px;
+}
+
+
+/* =====================================================
+   STATUS
+===================================================== */
+
+.resultado .status {
+    display: inline-flex !important;
+
+    align-items: center;
+    gap: 6px;
+
+    padding: 5px 9px;
+
+    border-radius: 20px;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    white-space: nowrap;
+}
+
+.status-dot {
+    display: inline-block;
+
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+}
+
+
+/* Disponível */
+
+.resultado .status-disponivel {
+    background: #e9f8ef;
+    color: #16834b;
+}
+
+.resultado .status-disponivel .status-dot {
+    background: #22c55e;
+}
+
+
+/* Disponível em breve */
+
+.resultado .status-breve {
+    background: #fff7df;
+    color: #a16207;
+}
+
+.resultado .status-breve .status-dot {
+    background: #eab308;
+}
+
+
+/* Indisponível */
+
+.resultado .status-indisponivel {
+    background: #feecec;
+    color: #b42318;
+}
+
+.resultado .status-indisponivel .status-dot {
+    background: #ef4444;
+}
+
+
+/* =====================================================
+   HORAS
+===================================================== */
+
+.horas-professor {
+    color: #1e293b;
+    font-size: 13px;
+}
+
+
+/* =====================================================
+   BOTÃO VER AGENDA
+===================================================== */
+
+.btn-agenda {
+    display: inline-flex !important;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 6px;
+
+    padding: 8px 11px;
+
+    border: none;
+    border-radius: 6px;
+
+    background: #1769e0;
+    color: white;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.btn-agenda:hover {
+    background: #0f55bd;
+    transform: translateY(-1px);
+}
+
+
+/* =====================================================
+   NENHUM RESULTADO
+===================================================== */
+
+.sem-resultados {
+    height: 160px;
+
+    text-align: center;
+    vertical-align: middle;
+}
+
+.sem-resultados i {
+    display: block;
+
+    margin-bottom: 10px;
+
+    font-size: 25px;
+    color: #94a3b8;
+}
+
+.sem-resultados strong {
+    display: block;
+
+    color: #475569;
+}
+
+.sem-resultados span {
+    display: block;
+
+    margin-top: 5px;
+
+    color: #94a3b8;
+
+    font-size: 12px;
+}
+
+
+/* =====================================================
+   CRONOGRAMA SEMANAL
+===================================================== */
+
+.grade {
+    display: grid !important;
+
+    grid-template-columns: repeat(5, 1fr);
+
+    gap: 8px;
+
+    margin-top: 15px;
+
+    min-height: 180px;
+}
+
+
+/* Cada dia */
+
+.dia-cronograma {
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+
+    overflow: hidden;
+
+    background: white;
+}
+
+.dia-titulo {
+    padding: 8px 5px;
+
+    text-align: center;
+
+    background: #f5f7fa;
+
+    color: #475569;
+
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.dia-conteudo {
+    display: flex;
+    flex-direction: column;
+
+    gap: 6px;
+
+    padding: 7px;
+}
+
+.evento-cronograma {
+    padding: 7px;
+
+    border-radius: 6px;
+
+    background: #eef5ff;
+
+    border-left: 3px solid #1769e0;
+}
+
+.evento-horario {
+    display: block;
+
+    margin-bottom: 2px;
+
+    color: #1769e0;
+
+    font-size: 9px;
+    font-weight: 700;
+}
+
+.evento-nome {
+    display: block;
+
+    color: #1e293b;
+
+    font-size: 10px;
+    font-weight: 600;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.evento-turma {
+    display: block;
+
+    margin-top: 2px;
+
+    color: #94a3b8;
+
+    font-size: 8px;
+}
+
+.cronograma-vazio {
+    grid-column: 1 / -1;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    min-height: 150px;
+
+    color: #94a3b8;
+
+    font-size: 12px;
+}
+
+.cronograma-vazio i {
+    font-size: 25px;
+}
+
+
+/* =====================================================
+   RESPONSIVIDADE
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .grade {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .grade {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
