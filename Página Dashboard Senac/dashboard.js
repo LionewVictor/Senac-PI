@@ -88,86 +88,229 @@ function inserirDados() {
     `);
 
 
-    banco.run(`
-        INSERT INTO professores (
-            nome,
-            area,
-            status,
-            horas,
-            cidade,
-            dia_da_semana,
-            horario,
-            turma,
-            assistente_administrativo,
-            periodo
-        )
-        VALUES
+ banco.run(`
+    INSERT INTO professores (
+        nome,
+        area,
+        status,
+        horas,
+        cidade,
+        dia_da_semana,
+        horario,
+        turma,
+        assistente_administrativo,
+        periodo
+    )
+    VALUES
 
-        (
-            'João Silva',
-            'Gestão de Negócios',
-            'disponivel',
-            16,
-            'Arapiraca',
-            'Segunda',
-            '12:00',
-            '2',
-            'nenhum',
-            'manha'
-        ),
+    
+    (
+        'João Silva',
+        'Gestão de Negócios',
+        'disponivel',
+        16,
+        'Arapiraca',
+        'Segunda',
+        '08:00',
+        '2',
+        'nenhum',
+        'manha'
+    ),
 
-        (
-            'Maria Santos',
-            'Informática',
-            'breve',
-            16,
-            'Palmeira dos Índios',
-            'Terça',
-            '13:00',
-            '3',
-            'nenhum',
-            'tarde'
-        ),
+    
+    (
+        'Maria Santos',
+        'Informática',
+        'breve',
+        16,
+        'Palmeira dos Índios',
+        'Terça',
+        '09:00',
+        '3',
+        'nenhum',
+        'manha'
+    ),
 
-        (
-            'Carlos Souza',
-            'Saúde',
-            'indisponivel',
-            16,
-            'Itapera',
-            'Quarta',
-            '14:00',
-            '4',
-            'nenhum',
-            'noite'
-        ),
+    
+    (
+        'Carlos Souza',
+        'Saúde',
+        'indisponivel',
+        16,
+        'Itapera',
+        'Quarta',
+        '10:00',
+        '4',
+        'nenhum',
+        'manha'
+    ),
 
-        (
-            'Ana Oliveira',
-            'Turismo',
-            'disponivel',
-            20,
-            'Arapiraca',
-            'Quinta',
-            '15:00',
-            '5',
-            'nenhum',
-            'tarde'
-        ),
+    
+    (
+        'Ana Oliveira',
+        'Turismo',
+        'disponivel',
+        20,
+        'Arapiraca',
+        'Quinta',
+        '11:00',
+        '5',
+        'nenhum',
+        'manha'
+    ),
 
-        (
-            'Pedro Santos',
-            'Beleza',
-            'breve',
-            12,
-            'Arapiraca',
-            'Sexta',
-            '16:00',
-            '6',
-            'nenhum',
-            'noite'
-        );
-    `);
+    
+    (
+        'Pedro Santos',
+        'Beleza',
+        'breve',
+        12,
+        'Arapiraca',
+        'Sexta',
+        '12:00',
+        '6',
+        'nenhum',
+        'manha'
+    ),
+
+    
+    (
+        'Lucas Almeida',
+        'Administração',
+        'disponivel',
+        16,
+        'Maceió',
+        'Segunda',
+        '13:00',
+        '7',
+        'nenhum',
+        'tarde'
+    ),
+
+    
+    (
+        'Juliana Costa',
+        'Informática',
+        'disponivel',
+        20,
+        'Arapiraca',
+        'Terça',
+        '14:00',
+        '8',
+        'nenhum',
+        'tarde'
+    ),
+
+  
+    (
+        'Rafael Lima',
+        'Gestão de Negócios',
+        'breve',
+        12,
+        'Palmeira dos Índios',
+        'Quarta',
+        '15:00',
+        '9',
+        'nenhum',
+        'tarde'
+    ),
+
+    
+    (
+        'Beatriz Alves',
+        'Saúde',
+        'disponivel',
+        16,
+        'Itapera',
+        'Quinta',
+        '16:00',
+        '10',
+        'nenhum',
+        'tarde'
+    ),
+
+    
+    (
+        'Gabriel Martins',
+        'Turismo',
+        'indisponivel',
+        20,
+        'Arapiraca',
+        'Sexta',
+        '17:00',
+        '11',
+        'nenhum',
+        'tarde'
+    ),
+
+    (
+        'Larissa Souza',
+        'Beleza',
+        'disponivel',
+        16,
+        'Maceió',
+        'Segunda',
+        '18:00',
+        '12',
+        'nenhum',
+        'noite'
+    ),
+
+    (
+        'Felipe Oliveira',
+        'Administração',
+        'breve',
+        12,
+        'Arapiraca',
+        'Terça',
+        '19:00',
+        '13',
+        'nenhum',
+        'noite'
+    ),
+
+    
+    (
+        'Camila Santos',
+        'Informática',
+        'disponivel',
+        20,
+        'Palmeira dos Índios',
+        'Quarta',
+        '20:00',
+        '14',
+        'nenhum',
+        'noite'
+    ),
+
+    
+    (
+        'Bruno Ferreira',
+        'Gestão de Negócios',
+        'indisponivel',
+        16,
+        'Itapera',
+        'Quinta',
+        '21:00',
+        '15',
+        'nenhum',
+        'noite'
+    ),
+
+    
+    (
+        'Amanda Rocha',
+        'Saúde',
+        'disponivel',
+        20,
+        'Arapiraca',
+        'Sexta',
+        '22:00',
+        '16',
+        'nenhum',
+        'noite'
+    );
+`);
 }
 
 
@@ -373,6 +516,77 @@ function buscarProfessores(event) {
 // MOSTRAR RESULTADOS
 // =====================================================
 
+const btnLimparFiltros =
+    document.getElementById(
+        "btn-limpar-filtros"
+    );
+
+
+btnLimparFiltros.addEventListener(
+    "click",
+    () => {
+
+        cidade.value = "";
+
+        diaDaSemana.value = "";
+
+        horario.value = "";
+
+        turma.value = "";
+
+        assistenteAdm.value = "";
+
+        periodo.value = "";
+
+
+        // Volta para todos os professores
+
+        buscarProfessores();
+
+
+        // Volta o cronograma para o estado inicial
+
+        const nomeUsuario =
+            document.getElementById(
+                "nomeUsuarioAgenda"
+            );
+
+        const areaUsuario =
+            document.getElementById(
+                "areaUsuarioAgenda"
+            );
+
+        const avatar =
+            document.getElementById(
+                "usuarioAvatar"
+            );
+
+
+        if (nomeUsuario) {
+
+            nomeUsuario.textContent =
+                "Usuário";
+
+        }
+
+
+        if (areaUsuario) {
+
+            areaUsuario.textContent =
+                "Selecione um professor";
+
+        }
+
+
+        if (avatar) {
+
+            avatar.textContent = "U";
+
+        }
+
+    }
+);
+
 function mostrarResultados(resultado) {
 
     const tabela =
@@ -516,115 +730,253 @@ function formatarStatus(status) {
 
 
 // =====================================================
-// CRONOGRAMA
+// CRONOGRAMA SEMANAL
 // =====================================================
 
 function atualizarCronograma(dados) {
 
     const grade = document.querySelector(".grade");
 
-    grade.innerHTML = "";
-
-    if (dados.length === 0) {
-
-        grade.innerHTML = `
-            <div class="cronograma-vazio">
-                <i class="fa-regular fa-calendar"></i>
-
-                <span>
-                    Nenhum horário encontrado.
-                </span>
-            </div>
-        `;
-
+    if (!grade) {
         return;
     }
 
+    grade.innerHTML = "";
+
+
+    // =================================================
+    // DIAS DA SEMANA
+    // =================================================
 
     const dias = [
         "Segunda",
         "Terça",
         "Quarta",
         "Quinta",
-        "Sexta"
+        "Sexta",
+        "Sábado",
+        "Domingo"
     ];
 
 
-    // Cria uma coluna para cada dia
+    // =================================================
+    // PERÍODOS
+    // =================================================
+
+    const periodos = [
+        "manha",
+        "tarde",
+        "noite"
+    ];
+
+
+    // =================================================
+    // CABEÇALHO
+    // =================================================
+
+    const espaco = document.createElement("div");
+
+    grade.appendChild(espaco);
+
+
     dias.forEach((dia) => {
 
-        const coluna = document.createElement("div");
+        const cabecalho = document.createElement("div");
 
-        coluna.classList.add("dia-cronograma");
+        cabecalho.classList.add("cabecalho-dia");
 
-        coluna.innerHTML = `
-            <div class="dia-titulo">
-                ${dia}
-            </div>
+        cabecalho.textContent =
+            dia.substring(0, 3);
 
-            <div
-                class="dia-conteudo"
-                data-dia="${dia}"
-            >
-            </div>
-        `;
+        grade.appendChild(cabecalho);
 
-        grade.appendChild(coluna);
     });
 
 
-    // Coloca cada professor no dia correspondente
-    dados.forEach((linha) => {
+    // =================================================
+    // CRIA AS CÉLULAS
+    // =================================================
 
-        const nome = linha[1];
+    periodos.forEach((periodo) => {
 
-        const dia = linha[6];
+        // Nome do período
 
-        const horario = linha[7];
+        const nomePeriodo =
+            document.createElement("div");
 
-        const turma = linha[8];
+        nomePeriodo.classList.add(
+            "periodo-cronograma"
+        );
+
+        nomePeriodo.textContent =
+            formatarPeriodo(periodo);
+
+        grade.appendChild(nomePeriodo);
 
 
-        const coluna =
-            document.querySelector(
-                `.dia-conteudo[data-dia="${dia}"]`
+        // Células dos dias
+
+        dias.forEach((dia) => {
+
+            const celula =
+                document.createElement("div");
+
+            celula.classList.add(
+                "celula-cronograma",
+                "sem-info"
             );
 
 
-        if (!coluna) {
-            return;
-        }
+            // Guarda as informações da célula
+
+            celula.dataset.dia = dia;
+
+            celula.dataset.periodo = periodo;
+
+            celula.title = "Sem informação";
 
 
-        const evento =
-            document.createElement("div");
+            // Procura registros correspondentes
 
-        evento.classList.add("evento-cronograma");
+            const registros =
+                dados.filter((linha) => {
 
+                    const diaBanco = linha[6];
 
-        evento.innerHTML = `
-            <span class="evento-horario">
-                ${horario}
-            </span>
+                    const periodoBanco = linha[10];
 
-            <span class="evento-nome">
-                ${nome}
-            </span>
+                    return (
+                        diaBanco === dia &&
+                        periodoBanco === periodo
+                    );
 
-            <span class="evento-turma">
-                Turma ${turma}
-            </span>
-        `;
+                });
 
 
-        coluna.appendChild(evento);
+            // Se encontrou algum registro
+
+            if (registros.length > 0) {
+
+                const registro = registros[0];
+
+                const status = registro[3];
+
+                const horario = registro[7];
+
+                aplicarStatusCelula(
+                    celula,
+                    status,
+                    horario
+                );
+
+            }
+
+
+            grade.appendChild(celula);
+
+        });
+
     });
+
+}
+
+// =====================================================
+// FORMATAR PERÍODO
+// =====================================================
+
+function formatarPeriodo(periodo) {
+
+    const periodos = {
+
+        manha: "Manhã",
+
+        tarde: "Tarde",
+
+        noite: "Noite"
+
+    };
+
+    return periodos[periodo] || periodo;
+
 }
 
 
 // =====================================================
-// RESUMO DE CARGA HORÁRIA
+// APLICAR STATUS NA CÉLULA
 // =====================================================
+
+function aplicarStatusCelula(
+    celula,
+    status,
+    horario
+) {
+
+    celula.classList.remove(
+        "agendada",
+        "breve",
+        "disponivel",
+        "indisponivel",
+        "sem-info"
+    );
+
+
+    if (
+        status === "alocado" ||
+        status === "ocupado" ||
+        status === "agendada"
+    ) {
+
+        celula.classList.add("agendada");
+
+        celula.title =
+            `Aula agendada${horario ? ` - ${horario}` : ""}`;
+
+        return;
+
+    }
+
+
+    if (status === "breve") {
+
+        celula.classList.add("breve");
+
+        celula.title =
+            `Disponível em breve${horario ? ` - ${horario}` : ""}`;
+
+        return;
+
+    }
+
+
+    if (status === "disponivel") {
+
+        celula.classList.add("disponivel");
+
+        celula.title =
+            `Disponível${horario ? ` - ${horario}` : ""}`;
+
+        return;
+
+    }
+
+
+    if (status === "indisponivel") {
+
+        celula.classList.add("indisponivel");
+
+        celula.title =
+            `Indisponível${horario ? ` - ${horario}` : ""}`;
+
+        return;
+
+    }
+
+
+    celula.classList.add("sem-info");
+
+    celula.title = "Sem informação";
+
+}
 
 function atualizarHoras(dados) {
 
@@ -716,33 +1068,105 @@ function verAgenda(id) {
         resultado[0].values[0];
 
 
-    console.log("Professor:", professor[1]);
+    // =================================================
+    // DADOS DO PROFESSOR
+    // =================================================
 
-    console.log("Área:", professor[2]);
+    const nome = professor[1];
 
-    console.log("Status:", formatarStatus(professor[3]));
+    const area = professor[2];
 
-    console.log("Horas:", professor[4]);
 
-    console.log("Cidade:", professor[5]);
+    // =================================================
+    // ALTERA USUÁRIO DO CRONOGRAMA
+    // =================================================
 
-    console.log("Dia:", professor[6]);
+    const nomeUsuario =
+        document.getElementById(
+            "nomeUsuarioAgenda"
+        );
 
-    console.log("Horário:", professor[7]);
+    const areaUsuario =
+        document.getElementById(
+            "areaUsuarioAgenda"
+        );
 
-    console.log("Turma:", professor[8]);
+    const avatar =
+        document.getElementById(
+            "usuarioAvatar"
+        );
 
-    console.log(
-        "Assistente:",
-        professor[9]
+
+    if (nomeUsuario) {
+
+        nomeUsuario.textContent =
+            nome;
+
+    }
+
+
+    if (areaUsuario) {
+
+        areaUsuario.textContent =
+            area;
+
+    }
+
+
+    if (avatar) {
+
+        avatar.textContent =
+            nome.charAt(0).toUpperCase();
+
+    }
+
+
+    // =================================================
+    // BUSCA TODOS OS REGISTROS DESSE PROFESSOR
+    // =================================================
+
+    const agenda =
+        banco.exec(`
+            SELECT *
+            FROM professores
+            WHERE nome = ?
+            ORDER BY
+                dia_da_semana,
+                horario;
+        `, [nome]);
+
+
+    let dadosAgenda = [];
+
+
+    if (
+        agenda.length > 0
+    ) {
+
+        dadosAgenda =
+            agenda[0].values;
+
+    }
+
+
+    // =================================================
+    // MOSTRA O CRONOGRAMA
+    // =================================================
+
+    atualizarCronograma(
+        dadosAgenda
     );
 
-    console.log(
-        "Período:",
-        professor[10]
+
+    // =================================================
+    // ATUALIZA RESUMO
+    // =================================================
+
+    atualizarHoras(
+        dadosAgenda
     );
+
 }
-
 
 // =====================================================
 // INICIAR SISTEMA

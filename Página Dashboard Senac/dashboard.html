@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css" integrity="sha512-ApSLB1Pd3/bZN8fWB/RG9YhN/7bd9Hkf3AGaE2mPfebjrxagjuBtx2GcgdqIlJkUzwylBo61r9Xa9NmgBI0swA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
    <title>Projeto Senac - Dashboard</title>
     <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="../Global/CSS/header.css">
 </head>
 <body>
 
@@ -22,11 +23,11 @@
             <nav class="sidebar-nav">
                 <ul>
                     <li class="nav-item active"><i class="fa-solid fa-chart-line"></i> Dashboard</li>
-                    <li class="nav-item"><i class="fa-solid fa-magnifying-glass"></i> Buscar Professores</li>
-                    <li class="nav-item"><i class="fa-solid fa-users"></i> Buscar Turmas</li>
-                    <li class="nav-item"><i class="fa-slab-press fa-regular fa-calendar"></i> Agenda Geral</li>
-                    <li class="nav-item"><i class="fa-solid fa-list"></i> Alocações</li>
-                    <li class="nav-item"><i class="fa-solid fa-gear"></i> Configurações</li>
+                    <li class="nav-item" id="buscarProfessores"><i class="fa-solid fa-magnifying-glass"></i> Buscar Professores</li>
+                    <li class="nav-item" id="buscarTurmas"><i class="fa-solid fa-users"></i> Buscar Turmas</li>
+                    <li class="nav-item" id="agendaGeral"><i class="fa-slab-press fa-regular fa-calendar"></i> Agenda Geral</li>
+                    <li class="nav-item" id="alocacoes"><i class="fa-solid fa-list"></i> Alocações</li>
+                    <li class="nav-item" id="configuracoes"><i class="fa-solid fa-gear"></i> Configurações</li>
                 </ul>
             </nav>
         </div>
@@ -118,6 +119,10 @@
                 Buscar
             </button>
 
+            <button id="btn-limpar-filtros" type="button">
+            Limpar filtros
+            </button>
+
         </form>
 
     </section>
@@ -207,19 +212,59 @@
         <!-- LADO DIREITO -->
         <div class="painel">
 
-            <!-- CRONOGRAMA -->
+        <!--CRONOGRAMA-->
 
-            <div class="cronograma">
+    <div class="cronograma">
 
-                <h2>Cronograma Semanal</h2>
+    <h2>Cronograma Semanal</h2>
 
-                <div class="grade">
+    <div class="usuario-agenda">
 
-                    <!-- aqui depois você monta com CSS Grid-->
+        <div class="usuario-avatar" id="usuarioAvatar">
+            U
+        </div>
 
-                </div>
+        <div>
+            <strong id="nomeUsuarioAgenda">Usuário</strong>
+            <small id="areaUsuarioAgenda">
+                Selecione um professor
+            </small>
+        </div>
 
-            </div>
+    </div>
+
+    <div class="grade"></div>
+
+    <div class="legenda">
+
+        <span>
+            <i class="legenda-cor agendada"></i>
+            Aula Agendada
+        </span>
+
+        <span>
+            <i class="legenda-cor breve"></i>
+            Disponível em Breve
+        </span>
+
+        <span>
+            <i class="legenda-cor disponivel"></i>
+            Disponível
+        </span>
+
+        <span>
+            <i class="legenda-cor indisponivel"></i>
+            Indisponível
+        </span>
+
+        <span>
+            <i class="legenda-cor sem-info"></i>
+            Sem Informação
+        </span>
+
+    </div>
+
+</div>
 
             <!-- RESUMO -->
 
@@ -261,5 +306,6 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.10.3/sql-wasm.js"></script>
 <script src="dashboard.js"></script>
+<script src="../Global/CSS/header.js"></script>
 </body>
 </html>

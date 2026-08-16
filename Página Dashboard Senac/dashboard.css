@@ -1,99 +1,3 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-}
-
-body {
-    display: flex;
-    background-color: #f1f5f9;
-    height: 100vh;
-    overflow: hidden;
-}
-
-.sidebar {
-    width: 220px;
-    background: linear-gradient(#011D42, #034aa8);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 24px 16px;
-    color: #ffffff;
-}
-
-.sidebar-nav a:hover{
-    transform: scale(1.1);
-}
-
-.logo-area {
-    width: 100%;
-    height: auto;
-}
-
-.sidebar-nav ul {
-    list-style: none;
-}
-
-.nav-item {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 12px 14px;
-    font-size: 13px;
-    color: #94a3b8;
-    cursor: pointer;
-    border-radius: 8px;
-    margin-bottom: 4px;
-    transition: background 0.2s, color 0.2s;
-}
-
-.nav-item:hover {
-    background-color: rgba(255, 255, 255, 0.05);
-    color: #ffffff;
-}
-
-.nav-item.active {
-    background-color: rgba(255, 255, 255, 0.1);
-    color: #ffffff;
-    font-weight: 500;
-}
-
-.sidebar-footer {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 16px;
-}
-
-.avatar {
-    width: 32px;
-    height: 32px;
-    background-color: #ffffff;
-    color: #061f3d;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 11px;
-    font-weight: bold;
-}
-
-.user-details {
-    display: flex;
-    flex-direction: column;
-}
-
-.user-name {
-    font-size: 13px;
-    font-weight: 500;
-}
-
-.user-role {
-    font-size: 10px;
-    color: #64748b;
-}
 
 /* ===========================
    MAIN
@@ -315,16 +219,6 @@ td button:hover{
 
 .cronograma h2{
     margin-bottom:20px;
-}
-
-.grade{
-    height:260px;
-    border:2px solid #1d72ff;
-    border-radius:6px;
-    background-image:
-        linear-gradient(#dcdcdc 1px, transparent 1px),
-        linear-gradient(90deg,#dcdcdc 1px,transparent 1px);
-    background-size:14.28% 33.33%;
 }
 
 /* ===========================
@@ -674,121 +568,215 @@ td button:hover{
    CRONOGRAMA SEMANAL
 ===================================================== */
 
-.grade {
-    display: grid !important;
+.cronograma {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.08);
+}
 
-    grid-template-columns: repeat(5, 1fr);
-
-    gap: 8px;
-
-    margin-top: 15px;
-
-    min-height: 180px;
+.cronograma h2 {
+    margin-bottom: 14px;
+    font-size: 20px;
+    font-weight: 500;
 }
 
 
-/* Cada dia */
+/* =====================================================
+   USUÁRIO SELECIONADO
+===================================================== */
 
-.dia-cronograma {
+.usuario-agenda {
     display: flex;
-    flex-direction: column;
-
-    min-width: 0;
-
-    border: 1px solid #e2e8f0;
-    border-radius: 8px;
-
-    overflow: hidden;
-
-    background: white;
+    align-items: center;
+    gap: 9px;
+    margin-bottom: 18px;
 }
 
-.dia-titulo {
-    padding: 8px 5px;
+.usuario-avatar {
+    width: 30px;
+    height: 30px;
 
-    text-align: center;
+    border-radius: 50%;
 
-    background: #f5f7fa;
-
-    color: #475569;
-
-    font-size: 10px;
-    font-weight: 700;
-}
-
-.dia-conteudo {
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
-    gap: 6px;
+    background: #555;
+    color: white;
 
-    padding: 7px;
+    font-size: 14px;
+    font-weight: 500;
 }
 
-.evento-cronograma {
-    padding: 7px;
-
-    border-radius: 6px;
-
-    background: #eef5ff;
-
-    border-left: 3px solid #1769e0;
-}
-
-.evento-horario {
+.usuario-agenda strong {
     display: block;
 
-    margin-bottom: 2px;
-
-    color: #1769e0;
-
-    font-size: 9px;
-    font-weight: 700;
+    color: #333;
+    font-size: 14px;
+    font-weight: 500;
 }
 
-.evento-nome {
-    display: block;
-
-    color: #1e293b;
-
-    font-size: 10px;
-    font-weight: 600;
-
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-
-.evento-turma {
+.usuario-agenda small {
     display: block;
 
     margin-top: 2px;
 
-    color: #94a3b8;
-
-    font-size: 8px;
+    color: #888;
+    font-size: 10px;
 }
 
-.cronograma-vazio {
-    grid-column: 1 / -1;
 
+/* =====================================================
+   GRADE
+===================================================== */
+
+.grade {
+    display: grid;
+
+    grid-template-columns: 65px repeat(7, 1fr);
+
+    gap: 6px;
+
+    width: 100%;
+}
+
+
+/* =====================================================
+   CABEÇALHO DOS DIAS
+===================================================== */
+
+.cabecalho-dia {
+    text-align: center;
+
+    color: #333;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    padding-bottom: 4px;
+}
+
+
+/* =====================================================
+   NOME DOS PERÍODOS
+===================================================== */
+
+.periodo-cronograma {
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+
+    padding-right: 5px;
+
+    color: #555;
+
+    font-size: 11px;
+}
+
+
+/* =====================================================
+   CÉLULAS
+===================================================== */
+
+.celula-cronograma {
+    height: 30px;
+
+    border-radius: 4px;
+
+    background: #d9d9d9;
+
+    cursor: pointer;
+
+    transition: .15s ease;
+
+    position: relative;
+}
+
+.celula-cronograma:hover {
+    transform: scale(1.03);
+}
+
+
+/* =====================================================
+   STATUS
+===================================================== */
+
+.celula-cronograma.agendada {
+    background: #6fa0ed;
+}
+
+.celula-cronograma.breve {
+    background: #f7ae57;
+}
+
+.celula-cronograma.disponivel {
+    background: #79bd82;
+}
+
+.celula-cronograma.indisponivel {
+    background: #eb5757;
+}
+
+.celula-cronograma.sem-info {
+    background: #d9d9d9;
+}
+
+
+/* =====================================================
+   LEGENDA
+===================================================== */
+
+.legenda {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    margin-top: 18px;
+
+    font-size: 9px;
+}
+
+.legenda span {
+    display: flex;
 
     align-items: center;
-    justify-content: center;
 
-    gap: 8px;
+    gap: 4px;
 
-    min-height: 150px;
-
-    color: #94a3b8;
-
-    font-size: 12px;
+    color: #555;
 }
 
-.cronograma-vazio i {
-    font-size: 25px;
+.legenda-cor {
+    width: 9px;
+    height: 9px;
+
+    display: inline-block;
+
+    border-radius: 2px;
+}
+
+.legenda-cor.agendada {
+    background: #6fa0ed;
+}
+
+.legenda-cor.breve {
+    background: #f7ae57;
+}
+
+.legenda-cor.disponivel {
+    background: #79bd82;
+}
+
+.legenda-cor.indisponivel {
+    background: #eb5757;
+}
+
+.legenda-cor.sem-info {
+    background: #d9d9d9;
 }
 
 
@@ -796,19 +784,28 @@ td button:hover{
    RESPONSIVIDADE
 ===================================================== */
 
-@media (max-width: 900px) {
+@media (max-width: 700px) {
 
     .grade {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: 50px repeat(7, minmax(30px, 1fr));
+        gap: 4px;
+    }
+
+    .periodo-cronograma {
+        font-size: 9px;
+    }
+
+    .cabecalho-dia {
+        font-size: 9px;
+    }
+
+    .celula-cronograma {
+        height: 25px;
+    }
+
+    .legenda {
+        gap: 8px;
     }
 
 }
 
-
-@media (max-width: 650px) {
-
-    .grade {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-}
