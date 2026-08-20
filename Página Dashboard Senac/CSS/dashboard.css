@@ -1,0 +1,1023 @@
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =====================================================
+   BODY
+===================================================== */
+
+body {
+  margin: 0;
+
+  background: #f4f6f9;
+
+  color: #1e293b;
+
+  overflow-x: hidden;
+}
+
+/* =====================================================
+   MAIN
+===================================================== */
+
+.main-content {
+  flex: 1;
+
+  min-width: 0;
+
+  width: auto;
+
+  max-width: 100%;
+
+  padding: 20px;
+
+  background: #f4f6f9;
+
+  overflow-y: auto;
+
+  overflow-x: hidden;
+}
+
+/* =====================================================
+   CARDS SUPERIORES
+===================================================== */
+
+.cards {
+  display: grid;
+
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  gap: 16px;
+
+  width: 100%;
+
+  min-width: 0;
+
+  margin-bottom: 20px;
+}
+
+.card {
+  min-width: 0;
+
+  width: 100%;
+
+  background: #ffffff;
+
+  border-radius: 12px;
+
+  padding: 18px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.icone {
+  width: 50px;
+
+  height: 50px;
+
+  flex: 0 0 50px;
+
+  border: 2px solid #0d6efd;
+
+  border-radius: 10px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 22px;
+}
+
+.info {
+  min-width: 0;
+}
+
+.info h4 {
+  font-size: 13px;
+
+  color: #555;
+
+  font-weight: 500;
+
+  line-height: 1.3;
+}
+
+.info span {
+  color: #0d6efd;
+
+  font-size: 29px;
+
+  font-weight: bold;
+}
+
+/* =====================================================
+   FILTRO
+===================================================== */
+
+.filtro {
+  width: 100%;
+
+  min-width: 0;
+
+  background: #ffffff;
+
+  border-radius: 12px;
+
+  padding: 20px;
+
+  margin-bottom: 20px;
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.filtro h3 {
+  margin-bottom: 18px;
+
+  font-weight: 500;
+}
+
+.form-filtro {
+  display: grid;
+
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  gap: 14px;
+
+  width: 100%;
+
+  min-width: 0;
+}
+
+.form-filtro select {
+  width: 100%;
+
+  min-width: 0;
+
+  height: 40px;
+
+  padding: 0 10px;
+
+  border: 1px solid #ccc;
+
+  border-radius: 6px;
+
+  outline: none;
+
+  background: #ffffff;
+}
+
+.form-filtro button {
+  width: 100%;
+
+  min-width: 0;
+
+  min-height: 40px;
+
+  background: #0d6efd;
+
+  color: #ffffff;
+
+  border: none;
+
+  border-radius: 6px;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.form-filtro button:hover {
+  background: #0958d6;
+}
+
+/* =====================================================
+   CONTEÚDO PRINCIPAL
+===================================================== */
+
+.conteudo {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.12fr)
+    minmax(300px, 0.88fr);
+
+  gap: 18px;
+
+  width: 100%;
+
+  min-width: 0;
+
+  margin: 0;
+
+  padding: 0;
+
+  align-items: start;
+}
+
+/* =====================================================
+   RESULTADOS
+===================================================== */
+
+.resultado {
+  width: 100%;
+
+  min-width: 0;
+
+  max-width: 100%;
+
+  background: #ffffff;
+
+  border-radius: 12px;
+
+  padding: 20px;
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+
+  overflow: hidden;
+}
+
+.resultado h2 {
+  margin-bottom: 20px;
+
+  font-size: 23px;
+
+  font-weight: 500;
+
+  color: #111827;
+}
+
+.resultado table {
+  width: 100%;
+
+  min-width: 0;
+
+  border-collapse: collapse;
+
+  table-layout: fixed;
+}
+
+.resultado th {
+  padding: 11px 8px;
+
+  text-align: left;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  color: #64748b;
+
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.resultado td {
+  padding: 13px 8px;
+
+  font-size: 12px;
+
+  color: #334155;
+
+  border-bottom: 1px solid #edf0f4;
+
+  vertical-align: middle;
+
+  overflow: hidden;
+}
+
+.resultado tbody tr:hover {
+  background: #f8fafc;
+}
+
+/* =====================================================
+   LARGURAS DA TABELA
+===================================================== */
+
+.resultado th:nth-child(1),
+.resultado td:nth-child(1) {
+  width: 28%;
+}
+
+.resultado th:nth-child(2),
+.resultado td:nth-child(2) {
+  width: 16%;
+}
+
+.resultado th:nth-child(3),
+.resultado td:nth-child(3) {
+  width: 19%;
+}
+
+.resultado th:nth-child(4),
+.resultado td:nth-child(4) {
+  width: 11%;
+}
+
+.resultado th:nth-child(5),
+.resultado td:nth-child(5) {
+  width: 26%;
+}
+
+/* =====================================================
+   PROFESSOR
+===================================================== */
+
+.professor-info {
+  display: flex !important;
+
+  align-items: center;
+
+  gap: 8px;
+
+  min-width: 0;
+}
+
+.professor-avatar {
+  flex: 0 0 34px;
+
+  width: 34px;
+
+  height: 34px;
+
+  display: flex !important;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #e8f0ff;
+
+  color: #1264d6;
+
+  font-size: 13px;
+
+  font-weight: 700;
+}
+
+.professor-info > div:last-child {
+  min-width: 0;
+
+  overflow: hidden;
+}
+
+.professor-info strong {
+  display: block !important;
+
+  color: #1e293b;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  white-space: normal;
+
+  overflow-wrap: anywhere;
+}
+
+.professor-info small {
+  display: block !important;
+
+  margin-top: 2px;
+
+  color: #94a3b8;
+
+  font-size: 10px;
+
+  line-height: 1.2;
+}
+
+/* =====================================================
+   ÁREA
+===================================================== */
+
+.area-professor {
+  display: block;
+
+  color: #475569;
+
+  font-size: 11px;
+
+  line-height: 1.2;
+
+  overflow-wrap: anywhere;
+}
+
+/* =====================================================
+   STATUS
+===================================================== */
+
+.resultado .status {
+  display: inline-flex !important;
+
+  align-items: center;
+
+  gap: 5px;
+
+  padding: 5px 8px;
+
+  border-radius: 20px;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  white-space: nowrap;
+}
+
+.status-dot {
+  display: inline-block;
+
+  width: 6px;
+
+  height: 6px;
+
+  border-radius: 50%;
+}
+
+/* DISPONÍVEL */
+
+.resultado .status-disponivel {
+  background: #e9f8ef;
+
+  color: #16834b;
+}
+
+.resultado .status-disponivel .status-dot {
+  background: #22c55e;
+}
+
+/* BREVE */
+
+.resultado .status-breve {
+  background: #fff7df;
+
+  color: #a16207;
+}
+
+.resultado .status-breve .status-dot {
+  background: #eab308;
+}
+
+/* INDISPONÍVEL */
+
+.resultado .status-indisponivel {
+  background: #feecec;
+
+  color: #b42318;
+}
+
+.resultado .status-indisponivel .status-dot {
+  background: #ef4444;
+}
+
+/* AFASTADO */
+
+.resultado .status-afastado {
+  background: #feecec;
+
+  color: #b42318;
+}
+
+.resultado .status-afastado .status-dot {
+  background: #ef4444;
+}
+
+/* =====================================================
+   HORAS
+===================================================== */
+
+.horas-professor {
+  color: #1e293b;
+
+  font-size: 12px;
+
+  white-space: nowrap;
+}
+
+/* =====================================================
+   BOTÃO VER AGENDA
+===================================================== */
+
+.btn-agenda {
+  display: inline-flex !important;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 5px;
+
+  width: 100%;
+
+  max-width: 86px;
+
+  min-width: 0;
+
+  padding: 7px 6px;
+
+  border: none;
+
+  border-radius: 6px;
+
+  background: #1769e0;
+
+  color: #ffffff;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+
+  white-space: nowrap;
+}
+
+.btn-agenda:hover {
+  background: #0f55bd;
+
+  transform: translateY(-1px);
+}
+
+/* =====================================================
+   NENHUM RESULTADO
+===================================================== */
+
+.sem-resultados {
+  height: 150px;
+
+  text-align: center;
+
+  vertical-align: middle;
+}
+
+.sem-resultados i {
+  display: block;
+
+  margin-bottom: 10px;
+
+  font-size: 25px;
+
+  color: #94a3b8;
+}
+
+.sem-resultados strong {
+  display: block;
+
+  color: #475569;
+}
+
+.sem-resultados span {
+  display: block;
+
+  margin-top: 5px;
+
+  color: #94a3b8;
+
+  font-size: 12px;
+}
+
+/* =====================================================
+   PAINEL DIREITO
+===================================================== */
+
+.painel {
+  width: 100%;
+
+  min-width: 0;
+
+  max-width: 100%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 18px;
+
+  overflow: hidden;
+}
+
+/* =====================================================
+   CRONOGRAMA
+===================================================== */
+
+.cronograma {
+  width: 100%;
+
+  min-width: 0;
+
+  max-width: 100%;
+
+  background: #ffffff;
+
+  border-radius: 12px;
+
+  padding: 18px;
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+
+  overflow: hidden;
+}
+
+.cronograma h2 {
+  margin-bottom: 14px;
+
+  font-size: 19px;
+
+  font-weight: 500;
+}
+
+/* =====================================================
+   PROFESSOR SELECIONADO
+===================================================== */
+
+.usuario-agenda {
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  margin-bottom: 16px;
+}
+
+.usuario-avatar {
+  width: 30px;
+
+  height: 30px;
+
+  flex: 0 0 30px;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background: #555555;
+
+  color: #ffffff;
+
+  font-size: 13px;
+
+  font-weight: 500;
+}
+
+.usuario-agenda strong {
+  display: block;
+
+  color: #333333;
+
+  font-size: 13px;
+
+  font-weight: 500;
+}
+
+.usuario-agenda small {
+  display: block;
+
+  margin-top: 2px;
+
+  color: #888888;
+
+  font-size: 9px;
+}
+
+/* =====================================================
+   GRADE SEMANAL
+===================================================== */
+
+.grade {
+  display: grid;
+
+  grid-template-columns:
+    48px
+    repeat(7, minmax(0, 1fr));
+
+  gap: 5px;
+
+  width: 100%;
+
+  min-width: 0;
+}
+
+/* =====================================================
+   CABEÇALHO DOS DIAS
+===================================================== */
+
+.cabecalho-dia {
+  text-align: center;
+
+  color: #333333;
+
+  font-size: 9px;
+
+  font-weight: 600;
+
+  padding-bottom: 3px;
+}
+
+/* =====================================================
+   PERÍODO
+===================================================== */
+
+.periodo-cronograma {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: flex-end;
+
+  padding-right: 4px;
+
+  color: #555555;
+
+  font-size: 9px;
+}
+
+/* =====================================================
+   CÉLULAS
+===================================================== */
+
+.celula-cronograma {
+  width: 100%;
+
+  height: 29px;
+
+  border-radius: 4px;
+
+  background: #d9d9d9;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.15s ease,
+    opacity 0.15s ease;
+}
+
+.celula-cronograma:hover {
+  transform: scale(1.03);
+
+  opacity: 0.9;
+}
+
+/* =====================================================
+   STATUS DA LEGENDA
+===================================================== */
+
+/* Aula Agendada */
+
+.celula-cronograma.agendada {
+  background: #6fa0ed;
+}
+
+/* Disponível em Breve */
+
+.celula-cronograma.breve {
+  background: #f7ae57;
+}
+
+/* Disponível */
+
+.celula-cronograma.disponivel {
+  background: #79bd82;
+}
+
+/* Indisponível */
+
+.celula-cronograma.indisponivel {
+  background: #eb5757;
+}
+
+/* Sem Informação */
+
+.celula-cronograma.sem-info {
+  background: #d9d9d9;
+}
+
+/* =====================================================
+   LEGENDA
+===================================================== */
+
+.legenda {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 9px;
+
+  margin-top: 15px;
+
+  font-size: 8px;
+}
+
+.legenda span {
+  display: flex;
+
+  align-items: center;
+
+  gap: 4px;
+
+  color: #555555;
+}
+
+.legenda-cor {
+  width: 8px;
+
+  height: 8px;
+
+  display: inline-block;
+
+  border-radius: 2px;
+}
+
+.legenda-cor.agendada {
+  background: #6fa0ed;
+}
+
+.legenda-cor.breve {
+  background: #f7ae57;
+}
+
+.legenda-cor.disponivel {
+  background: #79bd82;
+}
+
+.legenda-cor.indisponivel {
+  background: #eb5757;
+}
+
+.legenda-cor.sem-info {
+  background: #d9d9d9;
+}
+
+/* =====================================================
+   RESUMO
+===================================================== */
+
+.resumo {
+  width: 100%;
+
+  min-width: 0;
+
+  max-width: 100%;
+
+  background: #ffffff;
+
+  border-radius: 12px;
+
+  padding: 18px;
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+
+  overflow: hidden;
+}
+
+.resumo h2 {
+  margin-bottom: 18px;
+
+  font-size: 19px;
+
+  font-weight: 500;
+}
+
+.cards-resumo {
+  display: grid;
+
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  gap: 8px;
+
+  width: 100%;
+
+  min-width: 0;
+}
+
+.mini-card {
+  min-width: 0;
+
+  width: 100%;
+
+  border: 1px solid #dddddd;
+
+  border-radius: 10px;
+
+  padding: 12px 6px;
+
+  text-align: center;
+}
+
+.mini-card small {
+  display: block;
+
+  color: #777777;
+
+  margin-bottom: 7px;
+
+  font-size: 9px;
+
+  line-height: 1.2;
+}
+
+.mini-card h3 {
+  font-size: 25px;
+
+  color: #000000;
+}
+
+/* =====================================================
+   RESPONSIVIDADE
+===================================================== */
+
+@media (max-width: 1200px) {
+  .cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .conteudo {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .painel {
+    display: grid;
+
+    grid-template-columns:
+      minmax(0, 1.15fr)
+      minmax(280px, 0.85fr);
+
+    align-items: start;
+  }
+}
+
+@media (max-width: 1000px) {
+  .form-filtro {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .painel {
+    display: flex;
+
+    grid-template-columns: none;
+  }
+}
+
+@media (max-width: 760px) {
+  .main-content {
+    padding: 14px;
+  }
+
+  .cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .form-filtro {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .cards-resumo {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 500px) {
+  .main-content {
+    padding: 10px;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .form-filtro {
+    grid-template-columns: 1fr;
+  }
+
+  .cards-resumo {
+    grid-template-columns: 1fr;
+  }
+
+  .filtro,
+  .resultado,
+  .cronograma,
+  .resumo {
+    padding: 14px;
+  }
+}

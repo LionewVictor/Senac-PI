@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css"
+      integrity="sha512-ApSLB1Pd3/bZN8fWB/RG9YhN/7bd9Hkf3AGaE2mPfebjrxagjuBtx2GcgdqIlJkUzwylBo61r9Xa9NmgBI0swA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Projeto Senac - Dashboard</title>
+    <link rel="stylesheet" href="CSS/dashboard.css" />
+    <link rel="stylesheet" href="../Global/CSS/global.css" />
+  </head>
+  <body>
+    <!-- SIDEBAR LATERAL ESQUERDA -->
+    <aside class="sidebar">
+      <div>
+        <div class="logo-area">
+          <img src="../Global/CSS/Logo-senac-80.png" alt="Logo Senac" />
+        </div>
+
+        <nav class="sidebar-nav">
+          <ul>
+            <li>
+              <a href="#" class="nav-item" id="dashboard">
+                <i class="fa-solid fa-table-columns"></i>
+                Dashboard
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="nav-item" id="registroProfessores">
+                <i class="fa-solid fa-user-plus"></i>
+                Registro de Professores
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="nav-item" id="agendaGeral">
+                <i class="fa-regular fa-calendar"></i>
+                Agenda Geral
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="nav-item" id="alocacoes">
+                <i class="fa-regular fa-clipboard"></i>
+                Alocações
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="nav-item" id="configuracoes">
+                <i class="fa-solid fa-gear"></i>
+                Configurações
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <!-- USUÁRIO -->
+
+      <div class="sidebar-footer">
+        <div class="avatar">PG</div>
+
+        <div class="user-details">
+          <span class="user-name"> Pedagógico </span>
+
+          <span class="user-role"> Equipe Senac </span>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <!-- CARDS -->
+      <section class="cards">
+        <div class="card">
+          <div class="icone"><i class="fa-solid fa-users"></i></div>
+
+          <div class="info">
+            <h4>Professores Disponíveis</h4>
+            <span id="spn-profDisponiveis"></span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="icone"><i class="fa-solid fa-user-clock"></i></div>
+
+          <div class="info">
+            <h4>Professores Alocados</h4>
+            <span id="spn-profAlocados"></span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="icone"><i class="fa-solid fa-graduation-cap"></i></div>
+
+          <div class="info">
+            <h4>Turmas Ativas</h4>
+            <span id="spn-turmasAtivas"></span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="icone"><i class="fa-regular fa-alarm-clock"></i></div>
+
+          <div class="info">
+            <h4>Alocações Pendentes</h4>
+            <span id="spn-alocacoesPendentes"></span>
+          </div>
+        </div>
+      </section>
+
+      <!-- FILTROS -->
+      <section class="filtro">
+        <h3>Filtro de Busca</h3>
+
+        <form class="form-filtro">
+          <select id="selectCidade">
+            <option value="" , selected disabled>Cidade</option>
+          </select>
+
+          <select id="selectDiaDaSemana">
+            <option value="" , selected disabled>Dia da Semana</option>
+          </select>
+
+          <select id="selectHorario">
+            <option value="" , selected disabled>Horário</option>
+          </select>
+
+          <select id="selectTurma">
+            <option value="" , selected disabled>Turma</option>
+          </select>
+
+          <select id="selectAssistenteAdm">
+            <option value="" , selected disabled>Assistente adm.</option>
+          </select>
+
+          <select id="selectPeriodo">
+            <option value="" , selected disabled>Período</option>
+          </select>
+
+          <button type="button" id="btn_buscar">Buscar</button>
+
+          <button id="btn-limpar-filtros" type="button">Limpar filtros</button>
+        </form>
+      </section>
+
+      <!-- CONTEÚDO -->
+      <section class="conteudo">
+        <!-- RESULTADOS -->
+        <div class="resultado">
+          <h2>Resultados da Busca</h2>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Professor</th>
+                <th>Área</th>
+                <th>Status</th>
+                <th>Horas</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+
+            <tbody id="resultadosBusca">
+              <tr>
+                <td>Professor</td>
+                <td>Gestão de Negócios</td>
+                <td><span class="disponivel">Disponível</span></td>
+                <td>16h</td>
+                <td><button>Ver Agenda</button></td>
+              </tr>
+
+              <tr>
+                <td>Professor</td>
+                <td>Informática</td>
+                <td><span class="breve">Disponível em breve</span></td>
+                <td>16h</td>
+                <td><button>Ver Agenda</button></td>
+              </tr>
+
+              <tr>
+                <td>Professor</td>
+                <td>Saúde</td>
+                <td><span class="disponivel">Disponível</span></td>
+                <td>16h</td>
+                <td><button>Ver Agenda</button></td>
+              </tr>
+
+              <tr>
+                <td>Professor</td>
+                <td>Turismo</td>
+                <td><span class="indisponivel">Indisponível</span></td>
+                <td>16h</td>
+                <td><button>Ver Agenda</button></td>
+              </tr>
+
+              <tr>
+                <td>Professor</td>
+                <td>Beleza</td>
+                <td><span class="breve">Disponível em breve</span></td>
+                <td>16h</td>
+                <td><button>Ver Agenda</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- LADO DIREITO -->
+        <div class="painel">
+          <!--CRONOGRAMA-->
+
+          <div class="cronograma">
+            <h2>Cronograma Semanal</h2>
+
+            <div class="usuario-agenda">
+              <div class="usuario-avatar" id="usuarioAvatar">U</div>
+
+              <div>
+                <strong id="nomeUsuarioAgenda">Usuário</strong>
+                <small id="areaUsuarioAgenda"> Selecione um professor </small>
+              </div>
+            </div>
+
+            <div class="grade"></div>
+
+            <div class="legenda">
+              <span>
+                <i class="legenda-cor agendada"></i>
+                Aula Agendada
+              </span>
+
+              <span>
+                <i class="legenda-cor breve"></i>
+                Disponível em Breve
+              </span>
+
+              <span>
+                <i class="legenda-cor disponivel"></i>
+                Disponível
+              </span>
+
+              <span>
+                <i class="legenda-cor indisponivel"></i>
+                Indisponível
+              </span>
+
+              <span>
+                <i class="legenda-cor sem-info"></i>
+                Sem Informação
+              </span>
+            </div>
+          </div>
+
+          <!-- RESUMO -->
+
+          <div class="resumo">
+            <h2>Resumo de Carga Horária</h2>
+
+            <div class="cards-resumo">
+              <div class="mini-card">
+                <small>Horas Contratadas</small>
+                <h3>40h</h3>
+              </div>
+
+              <div class="mini-card">
+                <small>Horas Alocadas</small>
+                <h3>24h</h3>
+              </div>
+
+              <div class="mini-card">
+                <small>Horas Livres</small>
+                <h3>16h</h3>
+              </div>
+
+              <div class="mini-card">
+                <small>Utilização</small>
+                <h3>60%</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.10.3/sql-wasm.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script src="../Global/js/global.js"></script>
+  </body>
+</html>

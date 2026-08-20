@@ -1,0 +1,622 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Senac - Alocações de Professores</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="../Global/CSS/global.css" />
+
+    <link rel="stylesheet" href="CSS/alocacoes.css" />
+  </head>
+
+  <body>
+    <div class="app">
+      <!-- ==================================================
+             NAVBAR
+        =================================================== -->
+
+      <aside class="sidebar">
+        <div>
+          <div class="logo-area">
+            <img src="../Global/CSS/Logo-senac-80.png" alt="Logo Senac" />
+          </div>
+
+          <nav class="sidebar-nav">
+            <ul>
+              <li>
+                <a
+                  href="../Página Dashboard Senac/dashboard.html"
+                  class="nav-item"
+                  id="dashboard"
+                >
+                  <i class="fa-solid fa-table-columns"></i>
+                  Dashboard
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="../registro de professores/registro.html"
+                  class="nav-item"
+                  id="registroProfessores"
+                >
+                  <i class="fa-solid fa-user-plus"></i>
+                  Registro de Professores
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="../Agenda Geral/agenda-geral.html"
+                  class="nav-item"
+                  id="agendaGeral"
+                >
+                  <i class="fa-regular fa-calendar"></i>
+                  Agenda Geral
+                </a>
+              </li>
+
+              <li>
+                <a href="alocacoes.html" class="nav-item active" id="alocacoes">
+                  <i class="fa-regular fa-clipboard"></i>
+                  Alocações
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="../Configurações/configuracoes.html"
+                  class="nav-item"
+                  id="configuracoes"
+                >
+                  <i class="fa-solid fa-gear"></i>
+                  Configurações
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="sidebar-footer">
+          <div class="avatar">PG</div>
+
+          <div class="user-details">
+            <span class="user-name"> Pedagógico </span>
+
+            <span class="user-role"> Equipe Senac </span>
+          </div>
+        </div>
+      </aside>
+
+      <!-- ==================================================
+             CONTEÚDO
+        =================================================== -->
+
+      <main class="conteudo">
+        <header class="topo">
+          <div>
+            <h1>Alocações de Professores</h1>
+
+            <p>
+              Gerencie e acompanhe todas as alocações de professores nas turmas
+              e disciplinas.
+            </p>
+          </div>
+
+          <div class="topo-acoes">
+            <button
+              type="button"
+              class="btn-nova-alocacao"
+              id="btnNovaAlocacao"
+              onclick="
+                document.getElementById('modalEdicao').hidden = false;
+                document.getElementById('tituloModal').textContent =
+                  'Nova Alocação';
+                document.getElementById('subtituloModal').textContent =
+                  'Preencha os dados da nova alocação.';
+                document.getElementById('editarId').value = '';
+                document.getElementById('formEdicao').reset();
+                document.getElementById('editarStatus').value = 'pendente';
+              "
+            >
+              <i class="fa-solid fa-plus"></i>
+              Nova Alocação
+            </button>
+
+            <div class="notificacao">
+              <i class="fa-regular fa-bell"></i>
+            </div>
+          </div>
+        </header>
+
+        <!-- ==================================================
+                 CARDS
+            =================================================== -->
+
+        <section class="cards">
+          <div class="card">
+            <div class="icone azul">
+              <i class="fa-solid fa-users"></i>
+            </div>
+
+            <div class="texto">
+              <span> Total de Alocações </span>
+
+              <h2 id="totalAlocacoes">0</h2>
+
+              <p>Total</p>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="icone verde">
+              <i class="fa-regular fa-circle-check"></i>
+            </div>
+
+            <div class="texto">
+              <span> Alocações Ativas </span>
+
+              <h2 id="alocacoesAtivas">0</h2>
+
+              <p id="percentualAtivas">0% do total</p>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="icone amarelo">
+              <i class="fa-regular fa-clock"></i>
+            </div>
+
+            <div class="texto">
+              <span> Alocações Pendentes </span>
+
+              <h2 id="alocacoesPendentes">0</h2>
+
+              <p id="percentualPendentes">0% do total</p>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="icone cinza">
+              <i class="fa-regular fa-circle-check"></i>
+            </div>
+
+            <div class="texto">
+              <span> Alocações Encerradas </span>
+
+              <h2 id="alocacoesEncerradas">0</h2>
+
+              <p id="percentualEncerradas">0% do total</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================================================
+                 FILTROS
+            =================================================== -->
+
+        <section class="filtros">
+          <h2>Filtros de Busca</h2>
+
+          <form id="formFiltro">
+            <div class="grupo">
+              <label for="instrutor"> Instrutor </label>
+
+              <input
+                type="text"
+                id="instrutor"
+                placeholder="Digite o nome do instrutor"
+              />
+            </div>
+
+            <div class="grupo">
+              <label for="turma"> Turma </label>
+
+              <select id="turma">
+                <option value="">Todas</option>
+              </select>
+            </div>
+
+            <div class="grupo">
+              <label for="curso"> Curso </label>
+
+              <select id="curso">
+                <option value="">Todos</option>
+              </select>
+            </div>
+
+            <div class="grupo">
+              <label for="cidade"> Cidade </label>
+
+              <select id="cidade">
+                <option value="">Todas</option>
+              </select>
+            </div>
+
+            <div class="grupo">
+              <label for="cronograma"> Cronograma </label>
+
+              <select id="cronograma">
+                <option value="">Todos</option>
+              </select>
+            </div>
+
+            <div class="grupo">
+              <label for="data"> Data </label>
+
+              <input type="date" id="data" />
+            </div>
+
+            <div class="grupo">
+              <label for="horario"> Horário </label>
+
+              <select id="horario">
+                <option value="">Todos</option>
+              </select>
+            </div>
+
+            <div class="grupo">
+              <label for="periodo"> Período </label>
+
+              <select id="periodo">
+                <option value="">Todos</option>
+              </select>
+            </div>
+
+            <div class="grupo">
+              <label for="edital"> Edital </label>
+
+              <select id="edital">
+                <option value="">Todos</option>
+              </select>
+            </div>
+
+            <div class="grupo">
+              <label for="assistente"> Assistente Administrativo </label>
+
+              <select id="assistente">
+                <option value="">Todos</option>
+              </select>
+            </div>
+
+            <div class="grupo">
+              <label for="pratica"> Prática / PI </label>
+
+              <select id="pratica">
+                <option value="">Todos</option>
+              </select>
+            </div>
+
+            <div class="grupo">
+              <label for="insumos"> Insumos </label>
+
+              <select id="insumos">
+                <option value="">Todos</option>
+              </select>
+            </div>
+
+            <div class="grupo">
+              <label for="material"> Material (PTD) </label>
+
+              <select id="material">
+                <option value="">Todos</option>
+              </select>
+            </div>
+
+            <div class="grupo">
+              <label for="avaliacao"> Avaliação </label>
+
+              <select id="avaliacao">
+                <option value="">Todas</option>
+              </select>
+            </div>
+
+            <div class="grupo">
+              <label for="feedback"> Feedback </label>
+
+              <select id="feedback">
+                <option value="">Todos</option>
+              </select>
+            </div>
+
+            <div class="grupo">
+              <label for="codigo"> Código </label>
+
+              <input type="text" id="codigo" placeholder="Digite o código" />
+            </div>
+
+            <div class="botoes-filtro">
+              <button type="reset" class="btn-limpar">Limpar Filtros</button>
+
+              <button type="submit" class="btn-buscar">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                Buscar
+              </button>
+            </div>
+          </form>
+        </section>
+
+        <!-- ==================================================
+                 TABELA
+            =================================================== -->
+
+        <section class="tabela">
+          <div class="abas">
+            <button class="ativo" type="button" data-status="todos">
+              Todas as Alocações
+            </button>
+
+            <button type="button" data-status="ativa">Ativas</button>
+
+            <button type="button" data-status="encerrada">Encerradas</button>
+
+            <button type="button" data-status="pendente">Pendentes</button>
+          </div>
+
+          <div class="tabela-scroll">
+            <table>
+              <thead>
+                <tr>
+                  <th>Professor</th>
+                  <th>Instrutor</th>
+                  <th>Turma</th>
+                  <th>Curso / Disciplina</th>
+                  <th>Cidade</th>
+                  <th>Cronograma</th>
+                  <th>Dia</th>
+                  <th>Horário</th>
+                  <th>Período</th>
+                  <th>Edital</th>
+                  <th>Assistente Administrativo</th>
+                  <th>Prática / PI</th>
+                  <th>Insumos</th>
+                  <th>Material (PTD)</th>
+                  <th>Avaliação</th>
+                  <th>Feedback</th>
+                  <th>Código</th>
+                  <th>Status</th>
+                  <th>Ações</th>
+                </tr>
+              </thead>
+
+              <tbody id="tabelaAlocacoes"></tbody>
+            </table>
+          </div>
+
+          <div class="rodape-tabela">
+            <span id="contadorTabela"> Mostrando 0 registros </span>
+
+            <div class="paginacao">
+              <button
+                type="button"
+                class="pagina-navegacao"
+                id="paginaAnterior"
+              >
+                <i class="fa-solid fa-angle-left"></i>
+              </button>
+
+              <button type="button" class="pagina ativa" id="paginaAtual">
+                1
+              </button>
+
+              <button type="button" class="pagina-navegacao" id="paginaProxima">
+                <i class="fa-solid fa-angle-right"></i>
+              </button>
+            </div>
+
+            <div class="itens">
+              <span> Itens por página </span>
+
+              <select id="itensPorPagina">
+                <option value="5">5</option>
+
+                <option value="10">10</option>
+
+                <option value="15">15</option>
+
+                <option value="20">20</option>
+              </select>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- ==================================================
+         MODAL
+    =================================================== -->
+
+    <div class="modal-overlay" id="modalEdicao" hidden>
+      <div class="modal">
+        <div class="modal-header">
+          <div>
+            <h2 id="tituloModal">Nova Alocação</h2>
+
+            <p id="subtituloModal">Preencha os dados da alocação.</p>
+          </div>
+
+          <button
+            type="button"
+            class="modal-close"
+            id="fecharModal"
+            onclick="document.getElementById('modalEdicao').hidden = true"
+          >
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+
+        <form id="formEdicao">
+          <input type="hidden" id="editarId" />
+
+          <div class="modal-grid">
+            <div class="modal-field">
+              <label for="editarProfessor"> Professor * </label>
+
+              <select id="editarProfessor" required></select>
+            </div>
+
+            <div class="modal-field">
+              <label for="editarInstrutor"> Instrutor </label>
+
+              <input type="text" id="editarInstrutor" />
+            </div>
+
+            <div class="modal-field">
+              <label for="editarTurma"> Turma </label>
+
+              <input type="text" id="editarTurma" />
+            </div>
+
+            <div class="modal-field">
+              <label for="editarCurso"> Curso / Disciplina </label>
+
+              <input type="text" id="editarCurso" />
+            </div>
+
+            <div class="modal-field">
+              <label for="editarCidade"> Cidade </label>
+
+              <input type="text" id="editarCidade" />
+            </div>
+
+            <div class="modal-field">
+              <label for="editarCronograma"> Cronograma </label>
+
+              <input type="text" id="editarCronograma" />
+            </div>
+
+            <div class="modal-field">
+              <label for="editarDia"> Dia da Semana </label>
+
+              <select id="editarDia">
+                <option value="">Selecione</option>
+
+                <option value="Segunda">Segunda</option>
+
+                <option value="Terça">Terça</option>
+
+                <option value="Quarta">Quarta</option>
+
+                <option value="Quinta">Quinta</option>
+
+                <option value="Sexta">Sexta</option>
+
+                <option value="Sábado">Sábado</option>
+
+                <option value="Domingo">Domingo</option>
+              </select>
+            </div>
+
+            <div class="modal-field">
+              <label for="editarHorario"> Horário </label>
+
+              <input type="text" id="editarHorario" placeholder="Ex.: 08:00" />
+            </div>
+
+            <div class="modal-field">
+              <label for="editarPeriodo"> Período </label>
+
+              <select id="editarPeriodo">
+                <option value="">Selecione</option>
+
+                <option value="Manhã">Manhã</option>
+
+                <option value="Tarde">Tarde</option>
+
+                <option value="Noite">Noite</option>
+              </select>
+            </div>
+
+            <div class="modal-field">
+              <label for="editarEdital"> Edital </label>
+
+              <input type="text" id="editarEdital" />
+            </div>
+
+            <div class="modal-field">
+              <label for="editarAssistente"> Assistente Administrativo </label>
+
+              <input type="text" id="editarAssistente" />
+            </div>
+
+            <div class="modal-field">
+              <label for="editarPratica"> Prática / PI </label>
+
+              <input type="text" id="editarPratica" />
+            </div>
+
+            <div class="modal-field">
+              <label for="editarInsumos"> Insumos </label>
+
+              <input type="text" id="editarInsumos" />
+            </div>
+
+            <div class="modal-field">
+              <label for="editarMaterial"> Material (PTD) </label>
+
+              <input type="text" id="editarMaterial" />
+            </div>
+
+            <div class="modal-field">
+              <label for="editarAvaliacao"> Avaliação </label>
+
+              <input type="text" id="editarAvaliacao" />
+            </div>
+
+            <div class="modal-field">
+              <label for="editarFeedback"> Feedback </label>
+
+              <input type="text" id="editarFeedback" />
+            </div>
+
+            <div class="modal-field">
+              <label for="editarCodigo"> Código </label>
+
+              <input type="text" id="editarCodigo" />
+            </div>
+
+            <div class="modal-field">
+              <label for="editarStatus"> Status </label>
+
+              <select id="editarStatus">
+                <option value="ativa">Ativa</option>
+
+                <option value="pendente">Pendente</option>
+
+                <option value="encerrada">Encerrada</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="modal-actions">
+            <button
+              type="button"
+              class="modal-cancel"
+              id="cancelarEdicao"
+              onclick="document.getElementById('modalEdicao').hidden = true"
+            >
+              Cancelar
+            </button>
+
+            <button type="submit" class="modal-save">
+              <i class="fa-solid fa-floppy-disk"></i>
+              Salvar
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="../Global/JS/global.js"></script>
+
+    <script src="JS/alocacoes.js"></script>
+  </body>
+</html>
