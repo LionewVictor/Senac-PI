@@ -1,0 +1,627 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Configurações - Senac</title>
+
+    <!-- FONTE -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- FONT AWESOME -->
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <!-- XLSX -->
+
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+
+    <!-- GLOBAL -->
+
+    <link rel="stylesheet" href="../Global/CSS/global.css" />
+
+    <!-- CONFIGURAÇÕES -->
+
+    <link rel="stylesheet" href="CSS/configuracoes.css" />
+  </head>
+
+  <body>
+    <div class="app">
+      <!-- ==================================================
+         NAVBAR
+    =================================================== -->
+
+      <aside class="sidebar">
+        <div>
+          <div class="logo-area">
+            <img src="../Global/CSS/Logo-senac-80.png" alt="Logo Senac" />
+          </div>
+
+          <nav class="sidebar-nav">
+            <ul>
+              <li>
+                <a href="#" class="nav-item" id="dashboard">
+                  <i class="fa-solid fa-table-columns"></i>
+
+                  Dashboard
+                </a>
+              </li>
+
+              <li>
+                <a href="#" class="nav-item" id="registroProfessores">
+                  <i class="fa-solid fa-user-plus"></i>
+
+                  Registro de Professores
+                </a>
+              </li>
+
+              <li>
+                <a href="#" class="nav-item" id="agendaGeral">
+                  <i class="fa-regular fa-calendar"></i>
+
+                  Agenda Geral
+                </a>
+              </li>
+
+              <li>
+                <a href="#" class="nav-item" id="alocacoes">
+                  <i class="fa-regular fa-clipboard"></i>
+
+                  Alocações
+                </a>
+              </li>
+
+              <li>
+                <a href="#" class="nav-item active" id="configuracoes">
+                  <i class="fa-solid fa-gear"></i>
+
+                  Configurações
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+        <!-- USUÁRIO -->
+
+        <div class="sidebar-footer">
+          <div class="avatar">PG</div>
+
+          <div class="user-details">
+            <span class="user-name"> Pedagógico </span>
+
+            <span class="user-role"> Equipe Senac </span>
+          </div>
+        </div>
+      </aside>
+
+      <!-- ==================================================
+         CONTEÚDO
+    =================================================== -->
+
+      <main class="content">
+        <div class="config-container">
+          <!-- ==================================================
+                 CARDS DE RESUMO
+            =================================================== -->
+
+          <section class="summary-grid">
+            <article class="summary-card">
+              <div class="summary-icon blue">
+                <i class="fa-regular fa-building"></i>
+              </div>
+
+              <div class="summary-content">
+                <span> Unidades Cadastradas </span>
+
+                <strong id="totalUnidades"> 0 </strong>
+
+                <button
+                  type="button"
+                  class="manage-link"
+                  data-section="unidades"
+                >
+                  Gerenciar →
+                </button>
+              </div>
+            </article>
+
+            <article class="summary-card">
+              <div class="summary-icon green">
+                <i class="fa-solid fa-book-open"></i>
+              </div>
+
+              <div class="summary-content">
+                <span> Cursos Ativos </span>
+
+                <strong id="totalCursos"> 0 </strong>
+
+                <button type="button" class="manage-link" data-section="cursos">
+                  Gerenciar →
+                </button>
+              </div>
+            </article>
+
+            <article class="summary-card">
+              <div class="summary-icon yellow">
+                <i class="fa-regular fa-user"></i>
+              </div>
+
+              <div class="summary-content">
+                <span> Usuários do Sistema </span>
+
+                <strong id="totalUsuarios"> 0 </strong>
+
+                <button
+                  type="button"
+                  class="manage-link"
+                  data-section="usuarios"
+                >
+                  Gerenciar →
+                </button>
+              </div>
+            </article>
+
+            <article class="summary-card">
+              <div class="summary-icon purple">
+                <i class="fa-regular fa-shield"></i>
+              </div>
+
+              <div class="summary-content">
+                <span> Perfis de Acesso </span>
+
+                <strong id="totalPerfis"> 0 </strong>
+
+                <button type="button" class="manage-link" data-section="perfis">
+                  Gerenciar →
+                </button>
+              </div>
+            </article>
+          </section>
+
+          <!-- ==================================================
+                 CONFIGURAÇÕES
+            =================================================== -->
+
+          <section class="settings-grid">
+            <!-- BLOCO 1 -->
+
+            <div class="settings-card">
+              <h2>Configurações Gerais</h2>
+
+              <div class="setting-row">
+                <div class="setting-info">
+                  <span class="setting-icon blue-border">
+                    <i class="fa-regular fa-calendar"></i>
+                  </span>
+
+                  <label for="inicioSemana"> Início da Semana </label>
+                </div>
+
+                <select id="inicioSemana" data-setting="inicio_semana">
+                  <option value="">Inserir...</option>
+
+                  <option value="segunda">Segunda-feira</option>
+
+                  <option value="domingo">Domingo</option>
+                </select>
+              </div>
+
+              <div class="setting-row">
+                <div class="setting-info">
+                  <span class="setting-icon blue-border">
+                    <i class="fa-regular fa-building"></i>
+                  </span>
+
+                  <label for="unidadePadrao"> Unidade Padrão </label>
+                </div>
+
+                <select id="unidadePadrao" data-setting="unidade_padrao">
+                  <option value="">Inserir...</option>
+
+                  <option value="arapiraca">Arapiraca</option>
+
+                  <option value="maceio">Maceió</option>
+                </select>
+              </div>
+
+              <div class="setting-row">
+                <div class="setting-info">
+                  <span class="setting-icon blue-border">
+                    <i class="fa-regular fa-file-excel"></i>
+                  </span>
+
+                  <label for="exportacaoDados"> Exportação de Dados </label>
+                </div>
+
+                <select id="exportacaoDados" data-setting="exportacao">
+                  <option value="">Inserir...</option>
+
+                  <option value="xlsx">Excel (.xlsx)</option>
+
+                  <option value="csv">CSV (.csv)</option>
+                </select>
+              </div>
+
+              <button
+                type="button"
+                class="save-button"
+                data-save-group="geral-1"
+              >
+                Salvar Alterações
+              </button>
+            </div>
+
+            <!-- BLOCO 2 -->
+
+            <div class="settings-card">
+              <h2>Configurações Gerais</h2>
+
+              <div class="setting-row">
+                <div class="setting-info">
+                  <span class="setting-icon blue-border">
+                    <i class="fa-regular fa-clock"></i>
+                  </span>
+
+                  <label for="cargaHoraria">
+                    Carga Horária Máxima Semanal
+                  </label>
+                </div>
+
+                <select id="cargaHoraria" data-setting="carga_horaria">
+                  <option value="">Inserir...</option>
+
+                  <option value="20">20h</option>
+
+                  <option value="30">30h</option>
+
+                  <option value="40">40h</option>
+                </select>
+              </div>
+
+              <div class="setting-row">
+                <div class="setting-info">
+                  <span class="setting-icon blue-border">
+                    <i class="fa-regular fa-calendar-days"></i>
+                  </span>
+
+                  <label for="intervaloAulas">
+                    Intervalo Mínimo Entre Aulas
+                  </label>
+                </div>
+
+                <select id="intervaloAulas" data-setting="intervalo">
+                  <option value="">Inserir...</option>
+
+                  <option value="10">10 minutos</option>
+
+                  <option value="15">15 minutos</option>
+
+                  <option value="20">20 minutos</option>
+                </select>
+              </div>
+
+              <div class="setting-row">
+                <div class="setting-info">
+                  <span class="setting-icon blue-border">
+                    <i class="fa-regular fa-location-dot"></i>
+                  </span>
+
+                  <label for="distanciaUnidades">
+                    Distância Máxima Entre Unidades
+                  </label>
+                </div>
+
+                <select id="distanciaUnidades" data-setting="distancia">
+                  <option value="">Inserir...</option>
+
+                  <option value="10">10 km</option>
+
+                  <option value="20">20 km</option>
+
+                  <option value="30">30 km</option>
+                </select>
+              </div>
+
+              <div class="setting-row">
+                <div class="setting-info">
+                  <span class="setting-icon blue-border">
+                    <i class="fa-solid fa-arrows-up-down"></i>
+                  </span>
+
+                  <label for="prioridadeDisciplina">
+                    Prioridade de Disciplina
+                  </label>
+                </div>
+
+                <select
+                  id="prioridadeDisciplina"
+                  data-setting="prioridade_disciplina"
+                >
+                  <option value="">Inserir...</option>
+
+                  <option value="alta">Alta</option>
+
+                  <option value="media">Média</option>
+
+                  <option value="baixa">Baixa</option>
+                </select>
+              </div>
+
+              <button
+                type="button"
+                class="save-button"
+                data-save-group="geral-2"
+              >
+                Salvar Alterações
+              </button>
+            </div>
+
+            <!-- BLOCO 3 -->
+
+            <div class="settings-card">
+              <h2>Configurações Gerais</h2>
+
+              <div class="setting-row">
+                <div class="setting-info">
+                  <span class="setting-icon blue-border">
+                    <i class="fa-regular fa-envelope"></i>
+                  </span>
+
+                  <label for="alertaAlocacoes">
+                    Alerta de Alocações Pendentes
+                  </label>
+                </div>
+
+                <select id="alertaAlocacoes" data-setting="alerta_alocacoes">
+                  <option value="">Inserir...</option>
+
+                  <option value="sim">Ativado</option>
+
+                  <option value="nao">Desativado</option>
+                </select>
+              </div>
+
+              <div class="setting-row">
+                <div class="setting-info">
+                  <span class="setting-icon blue-border">
+                    <i class="fa-regular fa-bell"></i>
+                  </span>
+
+                  <label for="lembreteAulas"> Lembrete de Aulas </label>
+                </div>
+
+                <select id="lembreteAulas" data-setting="lembrete_aulas">
+                  <option value="">Inserir...</option>
+
+                  <option value="15">15 minutos antes</option>
+
+                  <option value="30">30 minutos antes</option>
+
+                  <option value="60">1 hora antes</option>
+                </select>
+              </div>
+
+              <div class="setting-row">
+                <div class="setting-info">
+                  <span class="setting-icon blue-border">
+                    <i class="fa-regular fa-calendar-days"></i>
+                  </span>
+
+                  <label for="mudancasAgenda"> Mudanças na Agenda </label>
+                </div>
+
+                <select id="mudancasAgenda" data-setting="mudancas_agenda">
+                  <option value="">Inserir...</option>
+
+                  <option value="sim">Notificar</option>
+
+                  <option value="nao">Não notificar</option>
+                </select>
+              </div>
+
+              <div class="setting-row">
+                <div class="setting-info">
+                  <span class="setting-icon blue-border">
+                    <i class="fa-regular fa-file-lines"></i>
+                  </span>
+
+                  <label for="relatorios"> Relatórios Semanais </label>
+                </div>
+
+                <select id="relatorios" data-setting="relatorios">
+                  <option value="">Inserir...</option>
+
+                  <option value="sim">Ativado</option>
+
+                  <option value="nao">Desativado</option>
+                </select>
+              </div>
+
+              <button
+                type="button"
+                class="save-button"
+                data-save-group="geral-3"
+              >
+                Salvar Alterações
+              </button>
+            </div>
+
+            <!-- BLOCO 4 -->
+
+            <div class="settings-card">
+              <h2>Configurações de Segurança</h2>
+
+              <div class="setting-row">
+                <div class="setting-info">
+                  <span class="setting-icon blue-border">
+                    <i class="fa-solid fa-lock"></i>
+                  </span>
+
+                  <label for="sessaoAutomatica"> Sessão Automática </label>
+                </div>
+
+                <select id="sessaoAutomatica" data-setting="sessao_automatica">
+                  <option value="">Inserir...</option>
+
+                  <option value="8">8 horas</option>
+
+                  <option value="12">12 horas</option>
+                </select>
+              </div>
+
+              <div class="setting-row">
+                <div class="setting-info">
+                  <span class="setting-icon blue-border">
+                    <i class="fa-solid fa-shield-halved"></i>
+                  </span>
+
+                  <label for="autenticacao">
+                    Autenticação de Dois Fatores
+                  </label>
+                </div>
+
+                <select id="autenticacao" data-setting="2fa">
+                  <option value="">Inserir...</option>
+
+                  <option value="ativado">Ativado</option>
+
+                  <option value="desativado">Desativado</option>
+                </select>
+              </div>
+
+              <div class="setting-row">
+                <div class="setting-info">
+                  <span class="setting-icon blue-border">
+                    <i class="fa-solid fa-key"></i>
+                  </span>
+
+                  <label for="politicaSenha"> Política de Senha </label>
+                </div>
+
+                <select id="politicaSenha" data-setting="politica_senha">
+                  <option value="">Inserir...</option>
+
+                  <option value="padrao">Padrão</option>
+
+                  <option value="forte">Forte</option>
+                </select>
+              </div>
+
+              <div class="setting-row">
+                <div class="setting-info">
+                  <span class="setting-icon blue-border">
+                    <i class="fa-regular fa-user"></i>
+                  </span>
+
+                  <label for="sessoesAtivas"> Visualizar Sessões Ativas </label>
+                </div>
+
+                <select id="sessoesAtivas" data-setting="sessoes_ativas">
+                  <option value="">Inserir...</option>
+
+                  <option value="permitir">Permitido</option>
+
+                  <option value="bloquear">Bloqueado</option>
+                </select>
+              </div>
+
+              <button
+                type="button"
+                class="save-button"
+                data-save-group="geral-4"
+              >
+                Salvar Alterações
+              </button>
+            </div>
+          </section>
+
+          <!-- ==================================================
+                 IMPORTAÇÃO
+            =================================================== -->
+
+          <section class="import-card">
+            <div class="import-header">
+              <div>
+                <h2>Importação de dados</h2>
+
+                <p>Importe os dados existentes da planilha para o sistema.</p>
+              </div>
+
+              <div class="import-icon">
+                <i class="fa-solid fa-file-import"></i>
+              </div>
+            </div>
+
+            <div class="import-content">
+              <div class="import-type">
+                <label for="tipoImportacao"> Tipo de dados </label>
+
+                <select id="tipoImportacao">
+                  <option value="">Selecione...</option>
+
+                  <option value="alocacoes">Alocações</option>
+
+                  <option value="completo">Dados completos</option>
+                </select>
+              </div>
+
+              <label class="upload-area" for="arquivoPlanilha">
+                <i class="fa-solid fa-cloud-arrow-up"></i>
+
+                <strong> Selecionar planilha </strong>
+
+                <span> .xlsx ou .csv </span>
+
+                <input
+                  type="file"
+                  id="arquivoPlanilha"
+                  accept=".xlsx,.csv"
+                  hidden
+                />
+              </label>
+
+              <div class="file-selected" id="arquivoSelecionado">
+                Nenhum arquivo selecionado.
+              </div>
+
+              <button
+                type="button"
+                class="import-button"
+                id="btnImportar"
+                disabled
+              >
+                <i class="fa-solid fa-upload"></i>
+
+                Importar dados
+              </button>
+            </div>
+
+            <div class="import-result" id="resultadoImportacao"></div>
+          </section>
+        </div>
+      </main>
+    </div>
+
+    <!-- ==================================================
+     SCRIPTS
+================================================== -->
+
+    <script src="../Global/JS/global.js"></script>
+
+    <script src="JS/configuracoes.js"></script>
+  </body>
+</html>

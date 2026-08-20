@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Agenda Geral - Senac</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="../Global/CSS/global.css" />
+
+    <link rel="stylesheet" href="CSS/agenda-geral.css" />
+  </head>
+
+  <body>
+    <div class="app">
+      <!-- ==================================================
+         SIDEBAR GLOBAL
+    =================================================== -->
+
+      <aside class="sidebar">
+        <div>
+          <div class="logo-area">
+            <img src="../Global/CSS/Logo-senac-80.png" alt="Logo Senac" />
+          </div>
+
+          <nav class="sidebar-nav">
+            <ul>
+              <li>
+                <a href="#" class="nav-item" id="dashboard">
+                  <i class="fa-solid fa-table-columns"></i>
+
+                  Dashboard
+                </a>
+              </li>
+
+              <li>
+                <a href="#" class="nav-item" id="registroProfessores">
+                  <i class="fa-solid fa-user-plus"></i>
+
+                  Registro de Professores
+                </a>
+              </li>
+
+              <li>
+                <a href="#" class="nav-item" id="agendaGeral">
+                  <i class="fa-regular fa-calendar"></i>
+
+                  Agenda Geral
+                </a>
+              </li>
+
+              <li>
+                <a href="#" class="nav-item" id="alocacoes">
+                  <i class="fa-regular fa-clipboard"></i>
+
+                  Alocações
+                </a>
+              </li>
+
+              <li>
+                <a href="#" class="nav-item" id="configuracoes">
+                  <i class="fa-solid fa-gear"></i>
+
+                  Configurações
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="sidebar-footer">
+          <div class="avatar">PG</div>
+
+          <div class="user-details">
+            <span class="user-name"> Pedagógico </span>
+
+            <span class="user-role"> Equipe Senac </span>
+          </div>
+        </div>
+      </aside>
+
+      <!-- ==================================================
+         CONTEÚDO
+    =================================================== -->
+
+      <main class="content">
+        <div class="container">
+          <!-- ==================================================
+                 PROFESSOR
+            =================================================== -->
+
+          <section class="teacher-card">
+            <div class="teacher-info">
+              <div class="teacher-photo">
+                <img src="img/professor.jpg" alt="Foto do Professor" />
+              </div>
+
+              <div class="teacher-data">
+                <h1 class="teacher-name">Selecione um professor</h1>
+
+                <p class="teacher-area">Escolha um professor abaixo</p>
+
+                <span class="teacher-status available"> Sem informação </span>
+              </div>
+            </div>
+
+            <div class="teacher-actions">
+              <button type="button" class="profile-button">Ver Perfil</button>
+            </div>
+          </section>
+
+          <!-- ==================================================
+                 AGENDA
+            =================================================== -->
+
+          <section class="schedule-card">
+            <header class="schedule-header">
+              <h2>Agenda Geral</h2>
+            </header>
+
+            <!-- ==================================================
+                     FILTROS
+                =================================================== -->
+
+            <section class="filters">
+              <form class="filters-form" id="agendaFiltros">
+                <!-- PROFESSOR -->
+
+                <div class="filter-group">
+                  <label for="professor"> Professor </label>
+
+                  <select id="professor" name="professor" required>
+                    <option value="">Selecione um professor</option>
+                  </select>
+                </div>
+
+                <!-- PERÍODO -->
+
+                <div class="filter-group">
+                  <label for="period"> Período </label>
+
+                  <select id="period" name="periodo">
+                    <option value="">Todos</option>
+                  </select>
+                </div>
+
+                <!-- UNIDADE -->
+
+                <div class="filter-group">
+                  <label for="unit"> Unidade </label>
+
+                  <select id="unit" name="unidade">
+                    <option value="">Todas</option>
+                  </select>
+                </div>
+
+                <!-- EIXO -->
+
+                <div class="filter-group">
+                  <label for="axis"> Eixo Tecnológico </label>
+
+                  <select id="axis" name="eixo">
+                    <option value="">Todos</option>
+                  </select>
+                </div>
+
+                <!-- BOTÕES -->
+
+                <div class="filter-buttons">
+                  <button type="submit" class="search-button">Buscar</button>
+
+                  <button type="reset" class="clear-button">
+                    Limpar Filtros
+                  </button>
+                </div>
+
+                <!-- EXPORTAR -->
+
+                <div class="export-button-area">
+                  <button type="button" class="export-button">
+                    <i class="fa-solid fa-file-export"></i>
+
+                    Exportar Agenda
+                  </button>
+                </div>
+              </form>
+            </section>
+
+            <!-- ==================================================
+                     LEGENDA
+                =================================================== -->
+
+            <section class="legend">
+              <div class="legend-item">
+                <span class="legend-color scheduled"></span>
+
+                <p>Aula Agendada</p>
+              </div>
+
+              <div class="legend-item">
+                <span class="legend-color soon"></span>
+
+                <p>Disponível em Breve</p>
+              </div>
+
+              <div class="legend-item">
+                <span class="legend-color available"></span>
+
+                <p>Disponível</p>
+              </div>
+
+              <div class="legend-item">
+                <span class="legend-color unavailable"></span>
+
+                <p>Indisponível</p>
+              </div>
+
+              <div class="legend-item">
+                <span class="legend-color no-info"></span>
+
+                <p>Sem Informação</p>
+              </div>
+            </section>
+
+            <!-- ==================================================
+                     GRADE
+                =================================================== -->
+
+            <section class="schedule-table">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Horário</th>
+
+                    <th>Segunda</th>
+
+                    <th>Terça</th>
+
+                    <th>Quarta</th>
+
+                    <th>Quinta</th>
+
+                    <th>Sexta</th>
+
+                    <th>Sábado</th>
+
+                    <th>Domingo</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <tr>
+                    <td>07:00</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+
+                  <tr>
+                    <td>08:00</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+
+                  <tr>
+                    <td>09:00</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+
+                  <tr>
+                    <td>10:00</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+
+                  <tr>
+                    <td>11:00</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+
+                  <tr>
+                    <td>12:00</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+
+                  <tr>
+                    <td>13:00</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+
+                  <tr>
+                    <td>14:00</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+
+                  <tr>
+                    <td>15:00</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+
+                  <tr>
+                    <td>16:00</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+
+                  <tr>
+                    <td>17:00</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+
+                  <tr>
+                    <td>18:00</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+
+                  <tr>
+                    <td>19:00</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+
+                  <tr>
+                    <td>20:00</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+
+                  <tr>
+                    <td>21:00</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+            </section>
+          </section>
+        </div>
+      </main>
+    </div>
+
+    <script src="../Global/JS/global.js"></script>
+
+    <script src="JS/agenda-geral.js"></script>
+  </body>
+</html>

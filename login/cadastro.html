@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Senac - Sistema Pedagógico</title>
+
+    <link rel="stylesheet" href="CSS/cadastro.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="main-container">
+      <!-- =====================================================
+           SIDEBAR
+      ====================================================== -->
+
+      <aside class="sidebar">
+        <div>
+          <div class="logo-area">
+            <img
+              src="https://portal.sc.senac.br/assets/images/logo-branco-80-anos.png"
+              alt="Logo Senac"
+            />
+          </div>
+
+          <h1>Sistema Pedagógico</h1>
+
+          <p class="subtitle">
+            Plataforma exclusiva para a equipe pedagógica do Senac.
+          </p>
+
+          <div class="features-list">
+            <div class="feature-item">
+              <div class="feature-icon">
+                <i class="fa-solid fa-users-gear"></i>
+              </div>
+
+              <div class="feature-text">
+                <h3>Gestão de Professores</h3>
+                <p>Busque, visualize e gerencie informações dos professores.</p>
+              </div>
+            </div>
+
+            <div class="feature-item">
+              <div class="feature-icon">
+                <i class="fa-regular fa-calendar-check"></i>
+              </div>
+
+              <div class="feature-text">
+                <h3>Agendas e Alocações</h3>
+                <p>
+                  Organize agendas e aloque professores nas turmas e
+                  disciplinas.
+                </p>
+              </div>
+            </div>
+
+            <div class="feature-item">
+              <div class="feature-icon">
+                <i class="fa-solid fa-chart-simple"></i>
+              </div>
+
+              <div class="feature-text">
+                <h3>Relatórios e Indicadores</h3>
+                <p>Acesse relatórios completos e indicadores pedagógicos.</p>
+              </div>
+            </div>
+
+            <div class="feature-item">
+              <div class="feature-icon">
+                <i class="fa-solid fa-shield-halved"></i>
+              </div>
+
+              <div class="feature-text">
+                <h3>Segurança e Confiabilidade</h3>
+                <p>Dados protegidos com os mais altos padrões de segurança.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="help-box">
+          <i class="fa-solid fa-headset"></i>
+
+          <div>
+            <strong>Precisa de ajuda?</strong><br />
+            Entre em contato com o suporte pedagógico da sua unidade.
+          </div>
+        </div>
+      </aside>
+
+      <!-- =====================================================
+           ÁREA PRINCIPAL
+      ====================================================== -->
+
+      <main class="content-area">
+        <div class="form-card">
+          <!-- CABEÇALHO -->
+
+          <div class="form-header">
+            <div class="user-icon-circle">
+              <i class="fa-solid fa-user-plus"></i>
+            </div>
+
+            <h2>Criar conta de acesso</h2>
+
+            <p>
+              Preencha os dados abaixo para criar sua conta no Sistema
+              Pedagógico do Senac.
+            </p>
+          </div>
+
+          <!-- =================================================
+               FORMULÁRIO
+          ================================================== -->
+
+          <form id="cadastroForm">
+            <!-- DADOS PESSOAIS -->
+
+            <span class="section-title"> Dados pessoais </span>
+
+            <div class="form-grid">
+              <div class="input-group">
+                <label for="nome"> Nome completo </label>
+
+                <div class="input-wrapper">
+                  <i class="fa-regular fa-user prefix-icon"></i>
+
+                  <input
+                    type="text"
+                    id="nome"
+                    name="nome"
+                    placeholder="Digite seu nome completo"
+                    autocomplete="name"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="input-group">
+                <label for="email"> E-mail institucional </label>
+
+                <div class="input-wrapper">
+                  <i class="fa-regular fa-envelope prefix-icon"></i>
+
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Digite seu e-mail institucional"
+                    autocomplete="email"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="input-group">
+                <label for="cpf"> CPF </label>
+
+                <div class="input-wrapper">
+                  <i class="fa-regular fa-address-card prefix-icon"></i>
+
+                  <input
+                    type="text"
+                    id="cpf"
+                    name="cpf"
+                    placeholder="000.000.000-00"
+                    maxlength="14"
+                    inputmode="numeric"
+                  />
+                </div>
+              </div>
+
+              <div class="input-group">
+                <label for="telefone"> Telefone institucional </label>
+
+                <div class="input-wrapper">
+                  <i class="fa-solid fa-phone prefix-icon"></i>
+
+                  <input
+                    type="tel"
+                    id="telefone"
+                    name="telefone"
+                    placeholder="(00) 00000-0000"
+                    maxlength="15"
+                    inputmode="tel"
+                  />
+                </div>
+              </div>
+
+              <div class="input-group">
+                <label for="unidade"> Unidade </label>
+
+                <div class="input-wrapper">
+                  <i class="fa-solid fa-building prefix-icon"></i>
+
+                  <select id="unidade" name="unidade" required>
+                    <option value="" disabled selected>
+                      Selecione sua unidade
+                    </option>
+
+                    <option value="Unidade Centro">Unidade Centro</option>
+
+                    <option value="Unidade Norte">Unidade Norte</option>
+                  </select>
+
+                  <i class="fa-solid fa-chevron-down select-arrow"></i>
+                </div>
+              </div>
+
+              <div class="input-group">
+                <label for="cargo"> Cargo / Função </label>
+
+                <div class="input-wrapper">
+                  <i class="fa-solid fa-briefcase prefix-icon"></i>
+
+                  <select id="cargo" name="cargo" required>
+                    <option value="" disabled selected>
+                      Selecione seu cargo
+                    </option>
+
+                    <option value="Coordenador">Coordenador</option>
+
+                    <option value="Assistente">Assistente</option>
+                  </select>
+
+                  <i class="fa-solid fa-chevron-down select-arrow"></i>
+                </div>
+              </div>
+            </div>
+
+            <!-- DADOS DE ACESSO -->
+
+            <span class="section-title"> Dados de acesso </span>
+
+            <div class="form-grid">
+              <div class="input-group">
+                <label for="senha"> Senha </label>
+
+                <div class="input-wrapper">
+                  <i class="fa-solid fa-lock prefix-icon"></i>
+
+                  <input
+                    type="password"
+                    id="senha"
+                    name="senha"
+                    placeholder="Crie uma senha"
+                    autocomplete="new-password"
+                    required
+                  />
+
+                  <i
+                    class="fa-regular fa-eye toggle-password"
+                    data-target="senha"
+                  ></i>
+                </div>
+              </div>
+
+              <div class="input-group">
+                <label for="confirmarSenha"> Confirmar senha </label>
+
+                <div class="input-wrapper">
+                  <i class="fa-solid fa-lock prefix-icon"></i>
+
+                  <input
+                    type="password"
+                    id="confirmarSenha"
+                    name="confirmarSenha"
+                    placeholder="Confirme sua senha"
+                    autocomplete="new-password"
+                    required
+                  />
+
+                  <i
+                    class="fa-regular fa-eye toggle-password"
+                    data-target="confirmarSenha"
+                  ></i>
+                </div>
+              </div>
+
+              <!-- REGRAS DA SENHA -->
+
+              <div class="password-rules">
+                <p>A senha deve conter:</p>
+
+                <div class="rules-grid">
+                  <div class="rule-item" data-rule="length">
+                    <i class="fa-regular fa-circle-check"></i>
+                    <span> Mínimo de 8 caracteres </span>
+                  </div>
+
+                  <div class="rule-item" data-rule="lowercase">
+                    <i class="fa-regular fa-circle-check"></i>
+                    <span> Letra minúscula </span>
+                  </div>
+
+                  <div class="rule-item" data-rule="special">
+                    <i class="fa-regular fa-circle-check"></i>
+                    <span> Caractere especial (!@#...) </span>
+                  </div>
+
+                  <div class="rule-item" data-rule="uppercase">
+                    <i class="fa-regular fa-circle-check"></i>
+                    <span> Letra maiúscula </span>
+                  </div>
+
+                  <div class="rule-item" data-rule="number">
+                    <i class="fa-regular fa-circle-check"></i>
+                    <span> Número </span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- TERMOS -->
+
+              <div class="terms-container">
+                <input type="checkbox" id="terms" name="terms" />
+
+                <label for="terms">
+                  Li e concordo com os
+                  <a href="#"> Termos de Uso </a>
+                  e a
+                  <a href="#"> Política de Privacidade </a>.
+                </label>
+              </div>
+
+              <!-- BOTÃO -->
+
+              <button type="submit" class="btn-submit" id="btnCadastro">
+                <i class="fa-solid fa-user-plus"></i>
+                Criar conta
+              </button>
+            </div>
+          </form>
+
+          <!-- LINK LOGIN -->
+
+          <div class="login-link">
+            Já possui uma conta?
+
+            <a href="login.html"> Fazer login </a>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <footer>© 2026 SENAC. Todos os direitos reservados.</footer>
+
+    <script src="JS/cadastro.js"></script>
+  </body>
+</html>
