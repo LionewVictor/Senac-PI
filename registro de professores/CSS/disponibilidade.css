@@ -1,0 +1,160 @@
+/* ============================================================
+   DISPONIBILIDADE SEMANAL
+============================================================ */
+
+.disponibilidade-card {
+    margin-top: 18px;
+}
+
+.disponibilidade-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 16px;
+}
+
+.disponibilidade-subtitulo {
+    margin-top: 4px;
+    color: #6b7280;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.disponibilidade-selecao {
+    width: min(320px, 100%);
+}
+
+.disponibilidade-selecao .field__label {
+    margin-bottom: 6px;
+}
+
+.disponibilidade-legenda {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 18px;
+    margin-bottom: 16px;
+    color: #475569;
+    font-size: 11px;
+}
+
+.disponibilidade-legenda span {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.status-dot {
+    width: 11px;
+    height: 11px;
+    border-radius: 3px;
+    display: inline-block;
+}
+
+.status-agendada {
+    background: #6fa0ed;
+}
+
+.status-breve {
+    background: #f7ae57;
+}
+
+.status-disponivel {
+    background: #79bd82;
+}
+
+.status-indisponivel {
+    background: #eb5757;
+}
+
+.status-sem-info {
+    background: #d9d9d9;
+}
+
+.disponibilidade-grade {
+    display: grid;
+    grid-template-columns: 72px repeat(7, minmax(70px, 1fr));
+    gap: 7px;
+    overflow-x: auto;
+    padding-bottom: 4px;
+}
+
+.disponibilidade-canto {
+    min-height: 24px;
+}
+
+.disponibilidade-dia {
+    text-align: center;
+    font-size: 12px;
+    font-weight: 600;
+    color: #334155;
+    padding: 4px 0 8px;
+}
+
+.disponibilidade-periodo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 8px;
+    font-size: 11px;
+    font-weight: 600;
+    color: #64748b;
+}
+
+.disponibilidade-celula {
+    min-width: 70px;
+    height: 42px;
+    border: 1px solid #d7dce5;
+    border-radius: 7px;
+    background: #d9d9d9;
+    cursor: pointer;
+    transition: transform .15s ease, opacity .15s ease, border-color .15s ease;
+}
+
+.disponibilidade-celula:hover {
+    transform: translateY(-1px);
+    opacity: .9;
+}
+
+.disponibilidade-celula.selecionada {
+    border-color: #0f172a;
+    box-shadow: 0 0 0 2px rgba(15, 23, 42, .08);
+}
+
+.disponibilidade-celula.agendada {
+    background: #6fa0ed;
+}
+
+.disponibilidade-celula.breve {
+    background: #f7ae57;
+}
+
+.disponibilidade-celula.disponivel {
+    background: #79bd82;
+}
+
+.disponibilidade-celula.indisponivel {
+    background: #eb5757;
+}
+
+.disponibilidade-celula.sem-info {
+    background: #d9d9d9;
+}
+
+.disponibilidade-acoes {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+@media (max-width: 850px) {
+    .disponibilidade-header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .disponibilidade-selecao {
+        width: 100%;
+    }
+}
